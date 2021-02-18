@@ -7,6 +7,4 @@
 
 import Foundation
 
-print(findMaxAverage([0,4,0,3,2],
-                     1
-                    ))
+print(closestDivisors(2))
