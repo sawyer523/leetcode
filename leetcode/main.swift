@@ -1,10 +1,12 @@
 //
 //  main.swift
-//  debugTest
+//  leetcode
 //
 //  Created by Xiaonan Chen on 2020/8/30.
 //
 
 import Foundation
 
-print(closestDivisors(2))
+print(removeDuplicates("abbaca"))
+
+
