@@ -106,8 +106,8 @@ func smallestStringWithSwaps(_ s: String, _ pairs: [[Int]]) -> String {
             groups[i] = v.sorted()
         }
         
-        var ans = [Character](repeating: " ", count: n)
-        for i in 0..<ans.count {
+    let ans = [Character](repeating: " ", count: n)
+    for _ in 0..<ans.count {
 //            let f = find(i)
 //            ans[i] = groups[f][0]
 //            groups[f] = Array(groups[f].dropFirst())

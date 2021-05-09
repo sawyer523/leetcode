@@ -29,8 +29,44 @@ import Foundation
   [ 8, 9, 4 ],
   [ 7, 6, 5 ]
  ]
+ 
+ 提示：
+
+ 1 <= n <= 20
  */
 
 func generateMatrix(_ n: Int) -> [[Int]] {
-    return [[]]
+    var matrix = [[Int]](repeating: [Int](repeating: 0, count: n), count: n)
+    var index = 1
+    var left = 0, right = n - 1, top = 0, bottom = n - 1
+    while left <= right && top <= bottom {
+        for cloumn in left...right {
+            matrix[top][cloumn] = index
+            index += 1
+        }
+        if top + 1 <= bottom {
+            for row in top+1...bottom {
+                matrix[row][right] = index
+                index += 1
+            }
+        }
+        if left < right && top < bottom {
+            if left+1 <= right-1 {
+                for column in (left+1...right-1).reversed() {
+                    matrix[bottom][column] = index
+                    index += 1
+                }
+            }
+            
+            for row in (top+1...bottom).reversed() {
+                matrix[row][left] = index
+                index += 1
+            }
+        }
+        left += 1
+        right -= 1
+        top += 1
+        bottom -= 1
     }
+    return matrix
+}

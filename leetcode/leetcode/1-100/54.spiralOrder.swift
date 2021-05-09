@@ -42,39 +42,43 @@ import Foundation
  */
 
 func spiralOrder(_ matrix: [[Int]]) -> [Int] {
-        if matrix.isEmpty {
-            return []
+    if matrix.isEmpty {
+        return []
+    }
+    
+    let (rows, columns) = (matrix.count, matrix[0].count)
+    var order = [Int](repeating: 0, count: rows*columns)
+    var index = 0
+    var (left, right, top, bottom) = (0, columns - 1, 0, rows - 1)
+    
+    
+    while left <= right && top <= bottom {
+        for column in left...right {
+            order[index] = matrix[top][column]
+            index += 1
         }
-        
-        let (rows, columns) = (matrix.count, matrix[0].count)
-        var order = [Int](repeating: 0, count: rows*columns)
-        var index = 0
-        var (left, right, top, bottom) = (0, columns - 1, 0, rows - 1)
-        
-        
-        while left <= right && top <= bottom {
-            for column in left...right {
-                order[index] = matrix[top][column]
-                index += 1
-            }
+        if top+1 <= bottom {
             for row in top+1...bottom {
                 order[index] = matrix[row][right]
                 index += 1
             }
-            if left < right && top < bottom {
+        }
+        if left < right && top < bottom {
+            if left+1 <= right-1 {
                 for column in (left+1...right-1).reversed() {
                     order[index] = matrix[bottom][column]
                     index += 1
                 }
-                for row in (top+1...bottom).reversed(){
-                    order[index] = matrix[row][left]
-                    index += 1
-                }
             }
-            left += 1
-            right -= 1
-            top += 1
-            bottom -= 1
+            for row in (top+1...bottom).reversed(){
+                order[index] = matrix[row][left]
+                index += 1
+            }
         }
-        return order
+        left += 1
+        right -= 1
+        top += 1
+        bottom -= 1
+    }
+    return order
 }

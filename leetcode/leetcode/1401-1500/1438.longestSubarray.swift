@@ -66,11 +66,11 @@ func longestSubarray(_ nums: [Int], _ limit: Int) -> Int {
     var ans = 0
     for (right, v) in nums.enumerated() {
         while 0 < minQ.count && v < minQ.last! {
-            minQ.popLast()
+            _=minQ.popLast()
         }
         minQ.append(v)
         while 0 < maxQ.count && maxQ.last! < v {
-            maxQ.popLast()
+            _=maxQ.popLast()
         }
         maxQ.append(v)
         while 0 < minQ.count && 0 < maxQ.count && limit < maxQ.first! - minQ.first! {

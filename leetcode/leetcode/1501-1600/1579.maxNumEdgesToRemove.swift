@@ -110,8 +110,8 @@ func maxNumEdgesToRemove(_ n: Int, _ edges: [[Int]]) -> Int {
         if e[0] == 3 &&
             (!alice.isSameSet(x, y) ||
             !bob.isSameSet(x, y)) {
-            alice.union(x, y)
-            bob.union(x, y)
+            _ = alice.union(x, y)
+            _ = bob.union(x, y)
             ans -= 1
         }
     }

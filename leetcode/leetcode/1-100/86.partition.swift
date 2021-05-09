@@ -45,10 +45,10 @@ class Solution86 {
     func partition(_ head: ListNode?, _ x: Int) -> ListNode? {
         var p = head
         var p1 = ListNode(0)
-        var p1Head = p1
+        let p1Head = p1
         
         var p2 = ListNode(0)
-        var p2Head = p2
+        let p2Head = p2
         
         while p != nil {
             if p!.val < x {
