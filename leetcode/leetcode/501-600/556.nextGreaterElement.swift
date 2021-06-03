@@ -40,26 +40,26 @@ import Foundation
 
 func nextGreaterElement(_ n: Int) -> Int {
     var digits = Array(n.description)
-    
+
     var i = digits.count - 2
     var j = digits.count - 1
-    
+
     while i >= 0 && digits[i + 1] <= digits[i] {
         i -= 1
     }
-    
+
     if i < 0 { return -1 }
-    
+
     while j >= 0 && digits[j] <= digits[i] {
         j -= 1
     }
-    
+
     digits.swapAt(i, j)
     digits[i+1..<digits.count].sort()
-    
+
     if let result = Int(String(digits)), result <= Int32.max {
         return result
     }
-    
+
     return -1
 }

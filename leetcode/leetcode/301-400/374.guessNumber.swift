@@ -54,12 +54,11 @@ import Foundation
 
  */
 
-
 func guessNumber(_ n: Int) -> Int {
     func guess(_ num: Int) -> Int {
         return 0
     }
-    
+
     var left = 1
     var right = n
     while left <= right {
@@ -75,6 +74,6 @@ func guessNumber(_ n: Int) -> Int {
             break
         }
     }
-    
+
     return 0
 }

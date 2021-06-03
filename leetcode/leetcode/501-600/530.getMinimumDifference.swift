@@ -45,8 +45,7 @@ import Foundation
  本题与 783 https://leetcode-cn.com/problems/minimum-distance-between-bst-nodes/ 相同
  */
 
-
-fileprivate func getMinimumDifference(_ root: TreeNode?) -> Int {
+private func getMinimumDifference(_ root: TreeNode?) -> Int {
     var ans = Int.max
     var pre = -1
     func dfs(_ root: TreeNode?) {

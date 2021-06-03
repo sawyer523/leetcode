@@ -55,19 +55,19 @@ func search2(_ nums: [Int], _ target: Int) -> Bool {
     if nums.isEmpty {
         return false
     }
-    
+
     let n = nums.count
     if n == 1 {
         return nums[0] == target ? true : false
     }
-    
+
     var l = 0, r = n-1
     while l <= r {
         let mid = l + (r-l)/2
         if nums[mid] == target {
             return true
         }
-        
+
         if nums[l] == nums[mid] && nums[mid] == nums[r] {
             l += 1
             r -= 1

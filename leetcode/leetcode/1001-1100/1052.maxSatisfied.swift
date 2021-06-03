@@ -51,7 +51,7 @@ func maxSatisfied(_ customers: [Int], _ grumpy: [Int], _ X: Int) -> Int {
             total += customers[i]
         }
     }
-    
+
    var res = 0
     for i in 0..<grumpy.count {
         if grumpy[i] == 1 {
@@ -64,6 +64,6 @@ func maxSatisfied(_ customers: [Int], _ grumpy: [Int], _ X: Int) -> Int {
             }
         }
     }
-    
+
     return res
 }

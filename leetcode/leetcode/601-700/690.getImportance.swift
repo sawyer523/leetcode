@@ -41,13 +41,12 @@ import Foundation
 
  */
 
-
 func getImportance(_ employees: [Employee], _ id: Int) -> Int {
     var map: [Int: Employee] = [:]
     for employee in employees {
         map[employee.id] = employee
     }
-    
+
     let target = map[id]
     var res = target!.importance
     var queue: [Int] = []
@@ -58,6 +57,6 @@ func getImportance(_ employees: [Employee], _ id: Int) -> Int {
         res += tmp.importance
         queue.append(contentsOf: tmp.subordinates)
     }
-    
+
     return res
 }

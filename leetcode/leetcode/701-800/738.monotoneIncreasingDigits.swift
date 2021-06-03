@@ -31,24 +31,23 @@ import Foundation
  说明: N 是在 [0, 10^9] 范围内的一个整数。
  */
 
-
 func monotoneIncreasingDigits(_ N: Int) -> Int {
     var arr = Array(String(N))
     var i = 1
     while i < arr.count && arr[i-1] <= arr[i] {
         i += 1
     }
-    
+
     if i < arr.count {
         while i > 0 && arr[i] < arr[i-1] {
             arr[i-1] = Character(Unicode.Scalar(arr[i-1].asciiValue! - 1))
             i -= 1
         }
-        
+
         for j in i+1 ..< arr.count {
             arr[j] = "9"
         }
     }
-    
+
     return Int(String(arr)) ?? 0
 }

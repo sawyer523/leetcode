@@ -60,7 +60,7 @@ func subarraysWithKDistinct(_ A: [Int], _ K: Int) -> Int {
             tot2 += 1
         }
         num2[v] += 1
-        
+
         while K < tot1 {
             num1[A[left1]] -= 1
             if num1[A[left1]] == 0 {
@@ -68,7 +68,7 @@ func subarraysWithKDistinct(_ A: [Int], _ K: Int) -> Int {
             }
             left1 += 1
         }
-        
+
         while K-1 < tot2 {
             num2[A[left2]] -= 1
             if num2[A[left2]] == 0 {
@@ -76,7 +76,7 @@ func subarraysWithKDistinct(_ A: [Int], _ K: Int) -> Int {
             }
             left2 += 1
         }
-        
+
         ans += left2 - left1
     }
     return ans

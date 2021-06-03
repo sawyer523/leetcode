@@ -68,34 +68,34 @@ func makeConnected(_ n: Int, _ connections: [[Int]]) -> Int {
         var parent = [Int](0..<n)
         var size = [Int](repeating: 1, count: n)
         var setCount = n
-        
+
         func find(_ x: Int) -> Int {
             if parent[x] != x {
                 parent[x] = find(parent[x])
             }
             return parent[x]
         }
-        
+
         func union(_ x: Int, _ y: Int) {
             var fx = find(x)
             var fy = find(y)
-            
+
             if fx == fy {
                 return
             }
-            
+
             if size[fx] < size[fy] {
                 (fx, fy) = (fy, fx)
             }
-            
+
             size[fx] += size[fy]
             parent[fy] = fx
             setCount -= 1
         }
-        
+
         for c in connections {
             union(c[0], c[1])
         }
-        
+
         return setCount - 1
 }

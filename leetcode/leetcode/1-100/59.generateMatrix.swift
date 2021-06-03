@@ -57,7 +57,7 @@ func generateMatrix(_ n: Int) -> [[Int]] {
                     index += 1
                 }
             }
-            
+
             for row in (top+1...bottom).reversed() {
                 matrix[row][left] = index
                 index += 1

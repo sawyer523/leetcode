@@ -73,7 +73,7 @@ func myAtoi(_ s: String) -> Int {
         var ans = 0
         let sign = a == "-" ? -1 : 1
         var i = a.isNumber ? 0 : 1
-        
+
         while i < s.count && arr[i].isNumber {
             ans = ans * 10 + arr[i].wholeNumberValue!
             if Int32.max < ans {
@@ -81,7 +81,7 @@ func myAtoi(_ s: String) -> Int {
             }
             i += 1
         }
-        
+
         ans = ans * sign
         return ans < Int32.min ? Int(Int32.min) : Int32.max < ans ? Int(Int32.max) : ans
 }

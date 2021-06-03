@@ -55,15 +55,15 @@ import Foundation
 
 func findMaximumXOR(_ nums: [Int]) -> Int {
     var max = 0, mask = 0
-    
+
     for i in stride(from: 31, through: 0, by: -1) {
         mask |= 1 << i
-        
+
         var prefixes = Set<Int>()
         for num in nums {
             prefixes.insert(num & mask)
         }
-        
+
         let idealMax = max | 1 << i
         for prefix in prefixes {
             if prefixes.contains(idealMax ^ prefix) {
@@ -72,6 +72,6 @@ func findMaximumXOR(_ nums: [Int]) -> Int {
             }
         }
     }
-    
+
     return max
 }

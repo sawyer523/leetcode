@@ -46,27 +46,27 @@ import Foundation
 func largestDivisibleSubset(_ nums: [Int]) -> [Int] {
     let n = nums.count
     let nums = nums.sorted()
-    
+
     var dp = [Int](repeating: 1, count: n)
     var maxSize = 1
     var maxVal = dp[0]
-    
+
     for i in 1..<n {
         for j in 0..<i {
             if nums[i]%nums[j] == 0 && dp[i] < dp[j] + 1 {
                 dp[i] = dp[j] + 1
             }
         }
-        
+
         if maxSize < dp[i] {
             (maxSize, maxVal) = (dp[i], nums[i])
         }
     }
-    
+
     if maxSize == 1 {
         return [nums[0]]
     }
-    
+
     var res: [Int] = []
     for i in stride(from: n-1, through: 0, by: -1) {
         if dp[i] == maxSize && maxVal % nums[i] == 0 {
@@ -75,6 +75,6 @@ func largestDivisibleSubset(_ nums: [Int]) -> [Int] {
             maxSize -= 1
         }
     }
-    
+
     return res
 }

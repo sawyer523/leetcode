@@ -75,6 +75,6 @@ func calculate1(_ s: String) -> Int {
             ans += num * sign
         }
     }
-    
+
     return ans
 }

@@ -98,11 +98,11 @@ func intToRoman(_ num: Int) -> String {
 //    }
 //
 //    return res
-    let thousands = ["", "M", "MM", "MMM"];
-    let hundreds = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
-    let tens     = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
-    let ones     = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
-    
+    let thousands = ["", "M", "MM", "MMM"]
+    let hundreds = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
+    let tens     = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
+    let ones     = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
+
     var res = thousands[num/1000]
     res += hundreds[num % 1000 / 100]
     res += tens[num % 100 / 10]

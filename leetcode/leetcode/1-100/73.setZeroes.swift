@@ -50,7 +50,7 @@ import Foundation
 func setZeroes(_ matrix: inout [[Int]]) {
     let m = matrix.count
     let n = matrix[0].count
-    
+
     //    var origin: [(Int, Int)] = []
     //    for i in 0..<m {
     //        for j in 0..<n {
@@ -72,32 +72,32 @@ func setZeroes(_ matrix: inout [[Int]]) {
     var isCol = false
     for i in 0..<m {
         if matrix[i][0] == 0 {
-            isCol = true;
+            isCol = true
         }
-        
+
         for j in 1..<n {
             if matrix[i][j] == 0 {
-                matrix[0][j] = 0;
-                matrix[i][0] = 0;
+                matrix[0][j] = 0
+                matrix[i][0] = 0
             }
         }
     }
-    
+
     for i in 1..<m {
         for j in 1..<n {
             if matrix[i][0] == 0 || matrix[0][j] == 0 {
-                matrix[i][j] = 0;
+                matrix[i][j] = 0
             }
         }
     }
-    
+
     if matrix[0][0] == 0 {
         matrix[0] = [Int](repeating: 0, count: n)
     }
-    
+
     if isCol {
         for i in 0..<m {
-            matrix[i][0] = 0;
+            matrix[i][0] = 0
         }
     }
 }

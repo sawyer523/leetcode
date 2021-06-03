@@ -67,7 +67,7 @@ func combinationSum4(_ nums: [Int], _ target: Int) -> Int {
         if dp[target] != -1 {
             return dp[target]
         }
-        
+
         var res = 0
         for num in nums {
             res += dfs(target - num)
@@ -75,6 +75,6 @@ func combinationSum4(_ nums: [Int], _ target: Int) -> Int {
         dp[target] = res
         return res
     }
-    
+
     return dfs(target)
 }

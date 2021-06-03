@@ -50,9 +50,9 @@ func reverseVowels(_ s: String) -> String {
         "E": 1,
         "I": 1,
         "O": 1,
-        "U": 1,
+        "U": 1
     ]
-    
+
     var start = 0
     var end = arr.count - 1
     while start < end {
@@ -64,11 +64,11 @@ func reverseVowels(_ s: String) -> String {
             end -= 1
             continue
         }
-        
+
         (arr[start], arr[end]) = (arr[end], arr[start])
         start += 1
         end -= 1
     }
-    
+
     return String(arr)
 }

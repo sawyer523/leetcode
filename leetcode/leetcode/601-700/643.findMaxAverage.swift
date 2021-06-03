@@ -47,6 +47,6 @@ func findMaxAverage(_ nums: [Int], _ k: Int) -> Double {
             pre = max(sum, pre)
         }
     }
-    
+
     return Double(pre)/Double(k)
 }

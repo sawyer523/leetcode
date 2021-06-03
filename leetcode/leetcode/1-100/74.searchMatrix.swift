@@ -60,6 +60,6 @@ func searchMatrix(_ matrix: [[Int]], _ target: Int) -> Bool {
             right = mid - 1
         }
     }
-    
+
     return false
 }

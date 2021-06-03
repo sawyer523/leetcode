@@ -51,20 +51,20 @@ class Solution205 {
             if let mapped1 = map[c1] {
                 if mapped1 != c2 {
                     return false
-                    
+
                 }
             } else {
                 map[c1] = c2
                 set.insert(c2)
                 if map.keys.count != set.count {
                     return false
-                    
+
                 }
             }
-            
+
             idx = s.index(after: idx)
         }
-        
+
         return true
     }
 }

@@ -70,7 +70,7 @@ func maxProfit(_ prices: [Int]) -> Int {
             profitOne1 = max(profitOne1, -prices[i])
         }
         return profitTwo0
-    
+
     /*
      * dp
      *

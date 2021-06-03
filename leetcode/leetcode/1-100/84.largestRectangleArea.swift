@@ -46,19 +46,19 @@ func largestRectangleArea(_ heights: [Int]) -> Int {
     if heights.count == 0 {
         return 0
     }
-    
+
     if heights.count == 1 {
         return heights[0]
     }
-    
+
     var newHeights = [Int]()
     newHeights.append(-1)
     newHeights.append(contentsOf: heights)
     newHeights.append(-1)
-    
+
     var stack = [Int]()
     stack.append(0)
-    
+
     var ans = 0
     for i in 1..<newHeights.count {
         while newHeights[i] < newHeights[stack.last!] {
@@ -68,6 +68,6 @@ func largestRectangleArea(_ heights: [Int]) -> Int {
         }
         stack.append(i)
     }
-    
+
     return ans
 }

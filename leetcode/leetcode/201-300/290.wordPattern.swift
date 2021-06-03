@@ -52,9 +52,9 @@ func wordPattern(_ pattern: String, _ s: String) -> Bool {
     if pattern.count != arrS.count {
         return false
     }
-    
+
     var dict: [Character: String] = [:]
-    
+
     for (char, word) in zip(pattern, arrS) {
         guard let keyWord = dict[char] else {
             if dict.values.contains(String(word)) {
@@ -63,11 +63,11 @@ func wordPattern(_ pattern: String, _ s: String) -> Bool {
             dict[char] = String(word)
             continue
         }
-        
+
         if keyWord != word {
             return false
         }
     }
-    
+
     return true
 }

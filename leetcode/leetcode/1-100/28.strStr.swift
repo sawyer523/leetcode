@@ -70,7 +70,7 @@ func strStr(_ haystack: String, _ needle: String) -> Int {
         pi[i] = j
         i += 1
     }
-    
+
     i = 0
     j = 0
     while i < n {
@@ -85,6 +85,6 @@ func strStr(_ haystack: String, _ needle: String) -> Int {
         }
         i += 1
     }
-    
+
     return -1
 }

@@ -58,7 +58,7 @@ func maximalRectangle(_ matrix: [[Character]]) -> Int {
     if matrix.isEmpty {
         return 0
     }
-    
+
     func largestRectangleArea(_ heights: [Int]) -> Int {
         var ans = 0
         var stack = [Int]()
@@ -77,17 +77,17 @@ func maximalRectangle(_ matrix: [[Character]]) -> Int {
                 start = i
             }
         }
-        
+
         return ans
     }
-    
+
     var ans = 0
     let row = matrix.count
     let cols = matrix[0].count
     var heights = [Int](repeating: 0, count: cols+2)
     for i in 0..<row {
         for j in 0..<cols {
-            if (matrix[i][j] == "1") {
+            if matrix[i][j] == "1" {
                 heights[j+1] += 1
             } else {
                 heights[j+1] = 0
@@ -96,7 +96,6 @@ func maximalRectangle(_ matrix: [[Character]]) -> Int {
         ans = max(ans, largestRectangleArea(heights))
     }
 
-    
     return ans
 }
 
@@ -110,27 +109,27 @@ func maximalRectangleDp(_ matrix: [[Character]]) -> Int {
     var dp = [[Int]](repeating: [Int](repeating: 0, count: cols), count: row)
     for i in 0..<row {
         for j in 0..<cols {
-            if (matrix[i][j] == "1") {
+            if matrix[i][j] == "1" {
                 dp[i][j] = 1 + (j > 0 ? dp[i][j-1] : 0)
             }
         }
     }
-    
+
     for i in (0..<row).reversed() {
         for j in 0..<cols {
-            var width = dp[i][j];
+            var width = dp[i][j]
             if width == 0 {
                 continue
             }
-            var height = 0;
-            var k = i;
-            while(k>=0 && matrix[k][j] == "1") {
-                width = min(dp[k][j],width);
+            var height = 0
+            var k = i
+            while k>=0 && matrix[k][j] == "1" {
+                width = min(dp[k][j], width)
                 k -= 1
                 height += 1
-                ans = max(ans,width*height);
+                ans = max(ans, width*height)
             }
         }
     }
-    return ans;
-};
+    return ans
+}

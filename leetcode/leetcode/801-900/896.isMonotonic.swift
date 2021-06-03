@@ -61,11 +61,11 @@ func isMonotonic(_ A: [Int]) -> Bool {
          if A[i] < A[i+1] {
              des = false
          }
-         
+
          if A[i+1] < A[i] {
              ins = false
          }
      }
-     
+
      return ins || des
 }

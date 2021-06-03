@@ -40,10 +40,10 @@ func maximumProduct(_ nums: [Int]) -> Int {
     for i in nums {
         if i < min1 {
             (min2, min1) = (min1, i)
-        } else if i < min2{
+        } else if i < min2 {
             min2 = i
         }
-        
+
         if max1 < i {
             (max3, max2, max1) = (max2, max1, i)
         } else if max2 < i {

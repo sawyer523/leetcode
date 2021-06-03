@@ -41,7 +41,7 @@ import Foundation
  0 <= k <= 2 * 109
  */
 
-fileprivate class ListNode {
+private class ListNode {
      public var val: Int
      public var next: ListNode?
      public init() { self.val = 0; self.next = nil; }
@@ -53,25 +53,25 @@ private func rotateRight(_ head: ListNode?, _ k: Int) -> ListNode? {
     if k == 0 || head == nil || head?.next == nil {
         return head
     }
-    
+
     var tmp = head
     var n = 1
     while tmp?.next != nil {
         tmp = tmp?.next
         n += 1
     }
-    
+
     var add = n - k%n
     if n == add {
         return head
     }
-    
+
     tmp?.next = head
     while 0 < add {
         tmp = tmp?.next
         add -= 1
     }
-    
+
     let res = tmp?.next
     tmp?.next = nil
     return res

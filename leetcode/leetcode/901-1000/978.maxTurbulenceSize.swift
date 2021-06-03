@@ -50,7 +50,6 @@ import Foundation
 
  */
 
-
 func maxTurbulenceSize(_ arr: [Int]) -> Int {
     var left = 0
     var right = 0
@@ -66,7 +65,7 @@ func maxTurbulenceSize(_ arr: [Int]) -> Int {
                 right += 1
             } else if arr[right] < arr[right-1] && arr[right] < arr[right+1] {
                     right += 1
-                
+
             } else {
                 left = right
             }
@@ -93,6 +92,6 @@ func maxTurbulenceSizeDP(_ arr: [Int]) -> Int {
         }
         ans = max(ans, up, down)
     }
-    
+
     return ans
 }

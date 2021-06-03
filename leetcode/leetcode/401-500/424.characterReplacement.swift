@@ -53,6 +53,6 @@ func characterReplacement(_ s: String, _ k: Int) -> Int {
                 left += 1
             }
         }
-        
+
         return s.count - left
 }

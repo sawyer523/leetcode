@@ -48,9 +48,9 @@ class Solution206 {
             self.next = nil
         }
     }
-    
+
     func reverseList(_ head: ListNode?) -> ListNode? {
-        var pre: ListNode? = nil
+        var pre: ListNode?
         var cur: ListNode? = head
         while cur != nil {
             let next = cur?.next

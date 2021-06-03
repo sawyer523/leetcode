@@ -43,25 +43,25 @@ import Foundation
 func minSwapsCouples(_ row: [Int]) -> Int {
     var count = 0
     var parent = [Int](0..<row.count/2)
-    
+
     func find(_ x: Int) -> Int {
         if parent[x] != x {
             parent[x] = find(parent[x])
         }
         return parent[x]
     }
-    
+
     func union(_ x: Int, _ y: Int) {
         let fx = find(x)
         let fy = find(y)
         if fx == fy {
             return
         }
-        
+
         parent[fy] = parent[fx]
         count += 1
     }
-    
+
     var i = 0
     while i < row.count {
         let x = row[i] / 2
@@ -71,6 +71,6 @@ func minSwapsCouples(_ row: [Int]) -> Int {
         }
         i += 2
     }
-    
+
     return count
 }

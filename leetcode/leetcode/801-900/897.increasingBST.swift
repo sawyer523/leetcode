@@ -47,14 +47,14 @@ func increasingBST(_ root: TreeNode?) -> TreeNode? {
         if node == nil {
             return
         }
-        
+
         bfs(node?.left)
         tmp.right = TreeNode(node!.val)
         tmp = tmp.right!
         bfs(node?.right)
     }
-    
+
     bfs(root)
-    
+
     return tump.right
 }

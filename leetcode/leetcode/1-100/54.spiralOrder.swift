@@ -45,13 +45,12 @@ func spiralOrder(_ matrix: [[Int]]) -> [Int] {
     if matrix.isEmpty {
         return []
     }
-    
+
     let (rows, columns) = (matrix.count, matrix[0].count)
     var order = [Int](repeating: 0, count: rows*columns)
     var index = 0
     var (left, right, top, bottom) = (0, columns - 1, 0, rows - 1)
-    
-    
+
     while left <= right && top <= bottom {
         for column in left...right {
             order[index] = matrix[top][column]
@@ -70,7 +69,7 @@ func spiralOrder(_ matrix: [[Int]]) -> [Int] {
                     index += 1
                 }
             }
-            for row in (top+1...bottom).reversed(){
+            for row in (top+1...bottom).reversed() {
                 order[index] = matrix[row][left]
                 index += 1
             }

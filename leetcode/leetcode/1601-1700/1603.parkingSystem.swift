@@ -53,13 +53,13 @@ class ParkingSystem {
     private var big = 0
     private var medium = 0
     private var small = 0
-    
+
     init(_ big: Int, _ medium: Int, _ small: Int) {
         self.big = big
         self.medium = medium
         self.small = small
     }
-    
+
     func addCar(_ carType: Int) -> Bool {
         switch carType {
         case 3:

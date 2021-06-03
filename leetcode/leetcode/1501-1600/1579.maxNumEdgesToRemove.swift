@@ -67,20 +67,20 @@ func maxNumEdgesToRemove(_ n: Int, _ edges: [[Int]]) -> Int {
         var parent: [Int]
         var size: [Int]
         var setCount: Int
-        
+
         init(_ n: Int) {
             self.parent = [Int](0..<n)
             self.size = [Int](repeating: 1, count: n)
             self.setCount = n
         }
-        
+
         func find(_ x: Int) -> Int {
             if parent[x] != x {
                 parent[x] = find(parent[x])
             }
             return parent[x]
         }
-        
+
         func union(_ x: Int, _ y: Int) -> Bool {
             var fx = find(x)
             var fy = find(y)
@@ -95,7 +95,7 @@ func maxNumEdgesToRemove(_ n: Int, _ edges: [[Int]]) -> Int {
             setCount -= 1
             return true
         }
-        
+
         func isSameSet(_ x: Int, _ y: Int) -> Bool {
             return find(x) == find(y)
         }
@@ -103,7 +103,7 @@ func maxNumEdgesToRemove(_ n: Int, _ edges: [[Int]]) -> Int {
     var ans = edges.count
     let alice = UnionFind(n)
     let bob = UnionFind(n)
-    
+
     for e in edges {
         let x = e[1]-1
         let y = e[2]-1
@@ -115,7 +115,7 @@ func maxNumEdgesToRemove(_ n: Int, _ edges: [[Int]]) -> Int {
             ans -= 1
         }
     }
-    
+
     let uf = [alice, bob]
     for e in edges {
         let tp = e[0]
@@ -123,10 +123,10 @@ func maxNumEdgesToRemove(_ n: Int, _ edges: [[Int]]) -> Int {
             ans -= 1
         }
     }
-    
+
     if 1 < uf[0].setCount || 1 < uf[1].setCount {
         return -1
     }
-    
+
     return ans
 }

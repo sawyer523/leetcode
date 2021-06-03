@@ -45,10 +45,10 @@ func removeDuplicateLetters(_ s: String) -> String {
     for (i, c) in s.enumerated() {
         dict[c] = i
     }
-    
+
     var stack: [Character] = []
     var dictStack: [Character: Bool] = [:]
-    
+
     for (i, c) in s.enumerated() {
         if !dictStack[c, default: false] {
             while 0 < stack.count && c < stack.last! && i < dict[stack.last!]! {
@@ -58,6 +58,6 @@ func removeDuplicateLetters(_ s: String) -> String {
             dictStack[c] = true
         }
     }
-    
+
     return String(stack)
 }

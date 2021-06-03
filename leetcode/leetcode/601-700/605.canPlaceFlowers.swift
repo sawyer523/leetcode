@@ -47,13 +47,13 @@ func canPlaceFlowers(_ flowerbed: [Int], _ n: Int) -> Bool {
                 f[i] = 1
                 ans += 1
             }
-            
+
             if n <= ans {
                 return true
             }
-            
+
             i += 1
         }
-        
+
         return false
 }

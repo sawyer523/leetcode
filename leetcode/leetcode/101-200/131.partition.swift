@@ -69,10 +69,7 @@ func partition(_ s: String) -> [[String]] {
     backtracking(&result, &candidate, Array(s), 0)
 
     return result
-    
-            
-    
-        
+
 //    func process(s: String, result: inout [[String]]) -> Void {
 //        var res = [[Bool]](repeating: [Bool](repeating: false, count:s.count), count: s.count)
 //

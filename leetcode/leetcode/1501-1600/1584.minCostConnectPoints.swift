@@ -63,7 +63,7 @@ import Foundation
 
 func minCostConnectPoints(_ points: [[Int]]) -> Int {
     var parentIndex = [Int]()
-    
+
     func findSet(_ vi: Int) -> Int {
         if parentIndex[vi] != vi {  // path compression; return root of the set
             parentIndex[vi] = findSet(parentIndex[vi])
@@ -72,11 +72,11 @@ func minCostConnectPoints(_ points: [[Int]]) -> Int {
             return vi // root
         }
     }
-    
+
     var edges = [(v1i: Int, v2i: Int, w: Int)]()
-    
+
     parentIndex = Array(0...points.count-1)
-    
+
     for i in 0 ..< points.count - 1 {
         let p1 = points[i]
         let p1x = p1[0], p1y = p1[1]
@@ -90,11 +90,11 @@ func minCostConnectPoints(_ points: [[Int]]) -> Int {
         return false
     }
     var minCost = 0
-    
+
     for edge in edges {
         let rp1 = findSet(edge.v1i) // returns root index
         let rp2 = findSet(edge.v2i) // returns root index
-        
+
         if rp1 != rp2 {  // Sets are separate, join them
             minCost += edge.w
             parentIndex[rp2] = rp1 // Union

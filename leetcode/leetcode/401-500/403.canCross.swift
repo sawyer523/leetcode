@@ -51,13 +51,13 @@ func canCross(_ stones: [Int]) -> Bool {
     let n = stones.count
     var dp = [[Bool]](repeating: [Bool](repeating: false, count: n), count: n)
     dp[0][0] = true
-    
+
     for i in 1..<n {
         if i < stones[i] - stones[i-1] {
             return false
         }
     }
-    
+
     for i in 1..<n {
         for j in stride(from: i-1, through: 0, by: -1) {
             let k = stones[i] - stones[j]
@@ -70,7 +70,6 @@ func canCross(_ stones: [Int]) -> Bool {
             }
         }
     }
-    
-    
+
     return false
 }

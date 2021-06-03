@@ -46,10 +46,9 @@ import Foundation
  1 <= num <= 10^9
  */
 
-
 func closestDivisors(_ num: Int) -> [Int] {
     var ans: [Int] = [0, Int(1e9)]
-    
+
     func divide(_ n: Int) {
         for i in (1...Int(sqrt(Double(n)))).reversed() {
             if n % i == 0 && (abs(n / i - i) < abs(ans[0] - ans[1])) {
@@ -58,7 +57,7 @@ func closestDivisors(_ num: Int) -> [Int] {
             }
         }
     }
-    
+
     divide(num + 1)
     divide(num + 2)
     return ans

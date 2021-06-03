@@ -46,15 +46,15 @@ import Foundation
  */
 
 func magicalString(_ n: Int) -> Int {
-        var list = [1,2,2]
-        
+        var list = [1, 2, 2]
+
         if n == 0 {
             return 0
         }
         if n <= 3 {
             return 1
         }
-        
+
         var fast = 2
         var answer = 1
         for i in 2..<n {
@@ -62,21 +62,21 @@ func magicalString(_ n: Int) -> Int {
                 if list[fast] == 2 {
                     list.append(1)
                     list.append(1)
-                }else{
+                } else {
                     list.append(2)
                     list.append(2)
                 }
                 fast += 2
-            }else {
+            } else {
                 answer += 1
                 if list[fast] == 2 {
                     list.append(1)
-                }else {
+                } else {
                     list.append(2)
                 }
                 fast += 1
             }
         }
-        
+
         return answer
 }

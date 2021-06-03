@@ -58,7 +58,7 @@ func numIslands(_ grid: [[Character]]) -> Int {
     if grid.isEmpty || grid[0].isEmpty {
         return 0
     }
-    
+
     let uf = UnionFind(grid)
     let directions = [(0, 1), (0, -1), (-1, 0), (1, 0)]
     let m = grid.count
@@ -81,7 +81,7 @@ func numIslands(_ grid: [[Character]]) -> Int {
             }
         }
     }
-    
+
     class UnionFind {
         private var parent: [Int]
         private var rank: [Int]
@@ -100,14 +100,14 @@ func numIslands(_ grid: [[Character]]) -> Int {
                 }
             }
         }
-        
+
         func find(_ x: Int) -> Int {
             if self.parent[x] != x {
                 self.parent[x] = find(x)
             }
             return self.parent[x]
         }
-        
+
         func union(_ x: Int, _ y: Int) {
             let xRoot = find(x)
             let yRoot = find(y)
@@ -124,6 +124,6 @@ func numIslands(_ grid: [[Character]]) -> Int {
             }
         }
     }
-    
+
     return uf.count
 }

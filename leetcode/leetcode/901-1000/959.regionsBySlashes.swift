@@ -91,14 +91,14 @@ func regionsBySlashes(_ grid: [String]) -> Int {
     var setCount = n * n * 4
     var parent = [Int](0..<(n*n*4))
     var size = [Int](repeating: 0, count: n*n*4)
-    
+
     func find(_ x: Int) -> Int {
         if parent[x] != x {
             parent[x] = find(parent[x])
         }
         return parent[x]
     }
-    
+
     func union(_ x: Int, _ y: Int) {
         var fx = find(x)
         var fy = find(y)
@@ -112,7 +112,7 @@ func regionsBySlashes(_ grid: [String]) -> Int {
         parent[fy] = fx
         setCount -= 1
     }
-    
+
     for i in 0..<n {
         let tempS = grid[i]
         let tempArr = Array(tempS)

@@ -86,8 +86,7 @@ class Solution339 {
         }
         return ans
     }
-    
-    
+
     class Node {
         var parent: Node!
         var value: Double
@@ -96,7 +95,7 @@ class Solution339 {
             parent = self
         }
     }
-    
+
     func find(_ node: Node) -> Node {
         var node = node
         repeat {
@@ -104,7 +103,7 @@ class Solution339 {
         } while node !== node.parent
         return node
     }
-    
+
     func union(_ n1: Node, _ n2: Node, _ num: Double, map: [String: Node]) {
         let r1 = find(n1)
         let r2 = find(n2)
@@ -116,4 +115,3 @@ class Solution339 {
         r1.parent = r2
     }
 }
-

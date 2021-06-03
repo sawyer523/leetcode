@@ -51,22 +51,22 @@ func smallestSubsequence(_ s: String) -> String {
     var stack: [Character] = []
     var inStack: [Bool] = Array(repeating: false, count: 26)
     var left: [Int] = Array(repeating: 0, count: 26)
-    
+
     for (i, c) in s.enumerated() {
         left[Int(c.asciiValue!) - aAscii] = i
     }
-    
+
     for (i, c) in s.enumerated() {
         if inStack[Int(c.asciiValue!) - aAscii] == true {
             continue
         }
-        
+
         while let last = stack.last, c < last && i < left[Int(last.asciiValue!) - aAscii] {
             inStack[Int(stack.popLast()!.asciiValue!) - aAscii] = false
         }
         inStack[Int(c.asciiValue!) - aAscii] = true
         stack.append(c)
     }
-    
+
     return String(stack)
 }

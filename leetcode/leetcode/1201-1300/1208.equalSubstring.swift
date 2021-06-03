@@ -57,7 +57,7 @@ func equalSubstring(_ s: String, _ t: String, _ maxCost: Int) -> Int {
         let s2 = Int(tArr[i].asciiValue!)
         diff[i] = abs(s1-s2)
     }
-    
+
     var start = 0
     var sum = 0
     var ans = 0
@@ -69,6 +69,6 @@ func equalSubstring(_ s: String, _ t: String, _ maxCost: Int) -> Int {
         }
         ans = max(ans, end - start + 1)
     }
-    
+
     return ans
 }

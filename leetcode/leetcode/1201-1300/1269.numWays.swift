@@ -62,7 +62,7 @@ func numWays(_ steps: Int, _ arrLen: Int) -> Int {
 //    var dp = [[Int]](repeating: [Int](repeating: 0, count: columns+1), count: steps+1)
     var dp = [Int](repeating: 0, count: columns+1)
     dp[0] = 1
-    for i in 1...steps {
+    for _ in 1...steps {
         var dpNext = [Int](repeating: 0, count: columns+1)
         for j in 0...columns {
             dpNext[j] = dp[j]

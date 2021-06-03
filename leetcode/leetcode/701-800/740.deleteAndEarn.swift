@@ -55,7 +55,7 @@ func deleteAndEarn(_ nums: [Int]) -> Int {
 //    for val in nums {
 //        sum[val] += val
 //    }
-    
+
     func rob(_ sum: [Int]) -> Int {
         var first = sum[0]
         var second = max(sum[0], sum[1])
@@ -64,7 +64,7 @@ func deleteAndEarn(_ nums: [Int]) -> Int {
         }
         return second
     }
-    
+
     let nums = nums.sorted()
     var sum = [nums[0]]
     var ans = 0
@@ -79,6 +79,6 @@ func deleteAndEarn(_ nums: [Int]) -> Int {
             sum = [val]
         }
     }
-    
+
     return ans + rob(sum)
 }

@@ -66,22 +66,22 @@ func kthLargestValue(_ matrix: [[Int]], _ k: Int) -> Int {
             if 0 < i {
                 s[i][j] ^= s[i-1][j]
             }
-            
+
             if 0 < j {
                 s[i][j] ^= s[i][j-1]
             }
-            
+
             if 0 < i && 0 < j {
                 s[i][j] ^= s[i-1][j-1]
             }
         }
     }
-    
+
     var res: [Int] = []
     for t in s {
         res.append(contentsOf: t)
     }
-    
+
     res.sort(by: >)
     return res[k-1]
 }

@@ -51,14 +51,14 @@ func subsets(_ nums: [Int]) -> [[Int]] {
             res.append(tmp)
             return
         }
-        
+
         dfs(false, cur + 1)
         tmp.append(nums[cur])
         dfs(true, cur + 1)
         tmp.removeLast()
     }
-    
+
     dfs(false, 0)
-    
+
     return res
 }

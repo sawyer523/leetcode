@@ -55,18 +55,17 @@ import Foundation
  给定的 r 和 c 都是正数。
  */
 
-
 func matrixReshape(_ nums: [[Int]], _ r: Int, _ c: Int) -> [[Int]] {
     let row = nums.count
     let columns = nums[0].count
     if row*columns != r*c {
         return nums
     }
-    
+
     var ans = [[Int]](repeating: [Int](repeating: 0, count: c), count: r)
     for i in 0..<r*c {
         ans[i/c][i%c] = nums[i/columns][i%columns]
     }
-    
+
     return ans
 }

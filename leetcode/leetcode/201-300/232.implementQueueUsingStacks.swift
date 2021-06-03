@@ -67,22 +67,22 @@ import Foundation
 class MyQueue {
     class Stack {
         private var elements = [Int]()
-        
+
         /** Push element x to the back of queue. */
         func push(_ x: Int) {
             elements.append(x)
         }
-        
+
         /** Removes the element from in front of queue and returns that element. */
         func pop() -> Int {
             return elements.popLast()!
         }
-        
+
         /** Get the front element. */
         func peek() -> Int {
             return elements.last!
         }
-        
+
         /** Returns whether the queue is empty. */
         func empty() -> Bool {
             return elements.isEmpty
@@ -93,14 +93,14 @@ class MyQueue {
     var output = Stack()
     /** Initialize your data structure here. */
     init() {
-    
+
     }
-    
+
     /** Push element x onto queue. */
     func push(_ x: Int) {
         input.push(x)
     }
-    
+
     /** Removes the element on top of the queue and returns that element. */
     func pop() -> Int {
         if output.empty() {
@@ -110,7 +110,7 @@ class MyQueue {
         }
         return output.pop()
     }
-    
+
     /** Get the top element. */
     func peek() -> Int {
          if output.empty() {
@@ -120,7 +120,7 @@ class MyQueue {
         }
         return output.peek()
     }
-    
+
     /** Returns whether the queue is empty. */
     func empty() -> Bool {
         return input.empty() && output.empty()

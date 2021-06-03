@@ -74,7 +74,7 @@ func maxProfit(_ k: Int, _ prices: [Int]) -> Int {
                 profit[i][kk][1] = max(profit[i-1][kk][1], profit[i-1][kk-1][0] - prices[i])
             }
         }
-        
+
         let end = prices.count - 1
         var res = 0
         for kk in 0 ... k {
@@ -88,7 +88,7 @@ func maxProfit1(_ k: Int, _ prices: [Int]) -> Int {
     if prices.count < 2 || k == 0 {
         return 0
     }
-    
+
     var buy = [Int](repeating: Int.min, count: k)
     var sell = [Int](repeating: 0, count: k)
     for i in 0..<prices.count {
@@ -100,6 +100,6 @@ func maxProfit1(_ k: Int, _ prices: [Int]) -> Int {
             }
         }
     }
-    
+
     return sell[k-1]
 }

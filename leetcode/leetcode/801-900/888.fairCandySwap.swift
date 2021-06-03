@@ -65,7 +65,7 @@ func fairCandySwap(_ A: [Int], _ B: [Int]) -> [Int] {
             totalA += v
             set[v] = 1
         }
-        
+
         let delta = (totalA - totalB) / 2
         for i in 0..<B.count {
             let t = B[i] + delta
@@ -75,4 +75,3 @@ func fairCandySwap(_ A: [Int], _ B: [Int]) -> [Int] {
         }
         return []
 }
-

@@ -77,11 +77,11 @@ func solveEquation(_ equation: String) -> String {
             temp += String(i)
         }
     }
-    
+
     if temp != "" {
         num += Int(temp == "" ? "0" : temp)! * cal * equal
     }
-    
+
     if x == 0 && num == 0 {
         return "Infinite solutions"
     } else if x == 0 && num != 0 {

@@ -88,7 +88,7 @@ func reverseParentheses(_ s: String) -> String {
     
     return ans
      */
-   
+
     /*
      * 神奇指针
      * 时间复杂度: O(N)
@@ -99,7 +99,7 @@ func reverseParentheses(_ s: String) -> String {
     var stack: [Int] = []
     var pair = [Int](repeating: 0, count: n)
     let arr = Array(s)
-    
+
     for i in 0..<n {
         if arr[i] == "(" {
             stack.append(i)
@@ -109,7 +109,7 @@ func reverseParentheses(_ s: String) -> String {
             pair[j] = i
         }
     }
-    
+
     var i = 0
     var d = 1
     var ans = ""
@@ -120,9 +120,9 @@ func reverseParentheses(_ s: String) -> String {
         } else {
             ans += String(arr[i])
         }
-        
+
         i += d
     }
-    
+
     return ans
 }

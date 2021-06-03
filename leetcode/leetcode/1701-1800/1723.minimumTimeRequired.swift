@@ -74,7 +74,7 @@ func minimumTimeRequired(_ jobs: [Int], _ k: Int) -> Int {
 //        }
 //        return false
 //    }
-    
+
 //    let jobs2 = jobs.sorted(by: >)
     var works = [Int](repeating: 0, count: k)
     var res = Int.max
@@ -83,7 +83,7 @@ func minimumTimeRequired(_ jobs: [Int], _ k: Int) -> Int {
             res = min(res, preMax)
             return
         }
-        
+
         var use = Set<Int>()
         for j in 0..<k {
             if use.contains(works[j]) {
@@ -102,14 +102,14 @@ func minimumTimeRequired(_ jobs: [Int], _ k: Int) -> Int {
     return res
 }
 
-//var maxSum: Int = 0
-//func minimumTimeRequired(_ jobs: [Int], _ k: Int) -> Int {
+// var maxSum: Int = 0
+// func minimumTimeRequired(_ jobs: [Int], _ k: Int) -> Int {
 //    let ks: [Int] = Array(repeating: 0, count: k)
 //    maxSum = Int(INT32_MAX)
 //    reverse(jobs, 0, ks, ks.count)
 //    return maxSum
-//}
-//func reverse(_ jobs: [Int], _ start: Int, _ ks: [Int], _ emptyCount: Int) {
+// }
+// func reverse(_ jobs: [Int], _ start: Int, _ ks: [Int], _ emptyCount: Int) {
 //
 //    let newMaxSum = ks.max()!
 //    if newMaxSum >= maxSum {
@@ -138,4 +138,4 @@ func minimumTimeRequired(_ jobs: [Int], _ k: Int) -> Int {
 //            break
 //        }
 //    }
-//}
+// }

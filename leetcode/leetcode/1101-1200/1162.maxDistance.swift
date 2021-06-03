@@ -52,7 +52,7 @@ import Foundation
 
 func maxDistance(_ grid: [[Int]]) -> Int {
     let m = grid.count
-    
+
     var dp = [[Int]](repeating: [Int](repeating: Int.max/2, count: m), count: m)
     var count = 0
     for i in 0..<m {
@@ -63,23 +63,23 @@ func maxDistance(_ grid: [[Int]]) -> Int {
             }
         }
     }
-    
+
     if count == 0 || count == m*m {
         return -1
     }
-    
+
     for i in 0..<m {
         for j in 0..<m {
             if 0 <= i-1 {
                 dp[i][j] = min(dp[i][j], dp[i-1][j] + 1)
             }
-            
+
             if 0 <= j-1 {
                 dp[i][j] = min(dp[i][j], dp[i][j-1] + 1)
             }
         }
     }
-    
+
     for i in stride(from: m-1, through: 0, by: -1) {
         for j in stride(from: m-1, through: 0, by: -1) {
             if i + 1 < m {
@@ -90,13 +90,13 @@ func maxDistance(_ grid: [[Int]]) -> Int {
             }
         }
     }
-    
+
     var res = 0
     for i in 0..<m {
         for j in 0..<m {
             res = max(res, dp[i][j])
         }
     }
-    
+
     return res
 }

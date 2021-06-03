@@ -66,7 +66,7 @@ func getLengthOfOptimalCompression(_ s: String, _ k: Int) -> Int {
             return 4
         }
     }
-    
+
     let n = s.count
     var dp: [[Int]] = Array(repeating: Array(repeating: n, count: k+1), count: n+1)
     var same = 0
@@ -79,7 +79,7 @@ func getLengthOfOptimalCompression(_ s: String, _ k: Int) -> Int {
             if j > 0 {
                 dp[i][j] = dp[i-1][j-1]
             }
-            
+
             var l = i
             same = 0
             diff = 0
@@ -95,6 +95,6 @@ func getLengthOfOptimalCompression(_ s: String, _ k: Int) -> Int {
             j += 1
         }
     }
-    
+
     return dp[n][k]
 }

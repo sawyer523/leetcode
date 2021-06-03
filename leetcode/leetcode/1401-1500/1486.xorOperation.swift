@@ -65,6 +65,6 @@ func xorOperation(_ n: Int, _ start: Int) -> Int {
     for i in 0..<n {
         res ^= (start + i*2)
     }
-    
+
     return res
 }

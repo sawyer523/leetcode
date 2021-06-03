@@ -57,7 +57,7 @@ import Foundation
 func findNumOfValidWords(_ words: [String], _ puzzles: [String]) -> [Int] {
     var cnt: [Int: Int] = [:]
     let aAscii = Character("a").asciiValue!
-    
+
     for word in words {
         var mask = 0
         for c in word {
@@ -65,7 +65,7 @@ func findNumOfValidWords(_ words: [String], _ puzzles: [String]) -> [Int] {
         }
         cnt[mask, default: 0] += 1
     }
-    
+
     var ans = [Int](repeating: 0, count: puzzles.count)
     for (i, puzzle) in puzzles.enumerated() {
         var first = 0
@@ -77,7 +77,7 @@ func findNumOfValidWords(_ words: [String], _ puzzles: [String]) -> [Int] {
                 mask |= 1 << (Int(char.asciiValue! - aAscii))
             }
         }
-        
+
         var subset = mask
         while true {
             ans[i] += cnt[subset|first, default: 0]

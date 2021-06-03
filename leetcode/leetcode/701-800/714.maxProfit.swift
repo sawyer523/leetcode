@@ -50,16 +50,16 @@ func maxProfit(_ prices: [Int], _ fee: Int) -> Int {
     }
     var sell = 0
     var buy = -prices[0] - fee
-    
+
     var pre_sell = sell
     var pre_buy = buy
-    
+
     for i in 1..<length {
         sell = max(pre_sell, pre_buy + prices[i])
         buy = max(buy, pre_sell - prices[i] - fee)
         pre_sell = sell
         pre_buy = buy
     }
-    
+
     return sell
 }

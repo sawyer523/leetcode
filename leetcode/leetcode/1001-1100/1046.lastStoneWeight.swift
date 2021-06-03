@@ -49,9 +49,9 @@ func lastStoneWeight(_ stones: [Int]) -> Int {
     if stones.count == 1 {
         return stones.first!
     }
-    
+
     var stones = stones.sorted(by: >)
-    
+
     func binarySearch(_ arr: [Int], _ target: Int) -> Int {
         if arr.count < 2 {
             return arr.first ?? 0 > target ? 1 : 0
@@ -86,6 +86,6 @@ func lastStoneWeight(_ stones: [Int]) -> Int {
         }
         return find(&arr)
     }
-    
+
     return find(&stones)
 }

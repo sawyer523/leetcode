@@ -64,7 +64,7 @@ func maxNumberOfFamilies(_ n: Int, _ reservedSeats: [[Int]]) -> Int {
             dict[row, default: 0] |=  1 << (col-2)
         }
     }
-    
+
     var ans = (n - dict.keys.count) * 2
     for (_, v) in dict {
         if v | left == left ||
@@ -73,6 +73,6 @@ func maxNumberOfFamilies(_ n: Int, _ reservedSeats: [[Int]]) -> Int {
             ans += 1
         }
     }
-    
+
     return ans
 }

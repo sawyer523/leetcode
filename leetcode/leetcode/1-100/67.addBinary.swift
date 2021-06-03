@@ -53,7 +53,7 @@ func addBinary(_ a: String, _ b: String) -> String {
         strA = Array(b)
         strB = Array(a)
     }
-    
+
     let lidx = strA.count - 1
     let ridx = strB.count - 1
     var rad = 0
@@ -80,7 +80,6 @@ func addBinary(_ a: String, _ b: String) -> String {
             break
         }
     }
-    
-    
+
     return str.first == "0" ? String(str.dropFirst()) : str
 }

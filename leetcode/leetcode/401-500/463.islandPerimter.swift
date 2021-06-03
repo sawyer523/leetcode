@@ -58,7 +58,7 @@ func islandPerimeter(_ grid: [[Int]]) -> Int {
         let rows = grid.count
         let cols = grid[0].count
         var ans = 0
-        
+
         func rects(_ row: Int, _ col: Int) -> Int {
             var rect = 4
             for i in 0...3 {
@@ -72,7 +72,7 @@ func islandPerimeter(_ grid: [[Int]]) -> Int {
             }
             return rect
         }
-        
+
         for row in 0..<rows {
             for col in 0..<cols {
                 if grid[row][col] == 1 {
@@ -80,6 +80,6 @@ func islandPerimeter(_ grid: [[Int]]) -> Int {
                 }
             }
         }
-        
+
         return ans
 }

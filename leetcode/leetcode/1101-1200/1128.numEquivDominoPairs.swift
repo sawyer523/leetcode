@@ -53,6 +53,6 @@ func numEquivDominoPairs(_ dominoes: [[Int]]) -> Int {
             ans += cnt[value]
             cnt[value] += 1
         }
-        
+
         return ans
 }

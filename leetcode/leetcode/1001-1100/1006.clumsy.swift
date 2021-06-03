@@ -67,6 +67,6 @@ func clumsy(_ N: Int) -> Int {
         stack.append(tmp)
         index += 1
     }
-    
+
     return stack.reduce(0, +)
 }

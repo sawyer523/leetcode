@@ -48,7 +48,7 @@ func matrixScore(_ A: [[Int]]) -> Int {
     if A.isEmpty {
         return 0
     }
-    
+
     let m = A.count
     let n = A[0].count
     var ans = 1 << (n - 1) * m
@@ -67,5 +67,3 @@ func matrixScore(_ A: [[Int]]) -> Int {
     }
     return ans
 }
-
-

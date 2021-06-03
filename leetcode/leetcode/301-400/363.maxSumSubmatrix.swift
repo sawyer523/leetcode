@@ -51,7 +51,7 @@ import Foundation
 func maxSumSubmatrix(_ matrix: [[Int]], _ k: Int) -> Int {
     func countSubarraysSmallerThenK(_ arr: [Int], _ k: Int) -> Int {
         var res = Int.min
-        
+
         for i in 0..<arr.count {
             var sum = 0
             for j in i..<arr.count {
@@ -61,14 +61,13 @@ func maxSumSubmatrix(_ matrix: [[Int]], _ k: Int) -> Int {
                 }
             }
         }
-        
+
         return res
     }
     var res = Int.min
     let m = matrix.count
     let n = matrix[0].count
-    
-    
+
     for left in 0..<n {
         var rowsSum = [Int](repeating: 0, count: m)
         for right in left..<n {
@@ -78,6 +77,6 @@ func maxSumSubmatrix(_ matrix: [[Int]], _ k: Int) -> Int {
             res = max(countSubarraysSmallerThenK(rowsSum, k), res)
         }
     }
-    
+
     return res
 }

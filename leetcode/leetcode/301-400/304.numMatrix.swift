@@ -60,7 +60,7 @@ class NumMatrix {
             }
         }
     }
-    
+
     func sumRegion(_ row1: Int, _ col1: Int, _ row2: Int, _ col2: Int) -> Int {
         var sum = 0
         for i in row1...row2 {

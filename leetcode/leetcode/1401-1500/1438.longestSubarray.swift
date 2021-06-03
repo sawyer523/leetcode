@@ -82,7 +82,7 @@ func longestSubarray(_ nums: [Int], _ limit: Int) -> Int {
             }
             left += 1
         }
-        
+
         ans = max(ans, right-left+1)
     }
     return ans

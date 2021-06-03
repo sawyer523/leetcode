@@ -58,6 +58,6 @@ func leastBricks(_ wall: [[Int]]) -> Int {
             maxCount = max(maxCount, map[sum]!)
         }
     }
-    
+
     return wall.count - maxCount
 }

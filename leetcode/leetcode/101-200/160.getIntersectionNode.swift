@@ -68,19 +68,19 @@ class SolutionIntersectionNode {
             self.next = nil
         }
     }
-    
+
     func getIntersectionNode(_ headA: ListNode?, _ headB: ListNode?) -> ListNode? {
         if headA == nil || headB == nil {
             return nil
         }
-        
+
         var nA = headA
         var nB = headB
         while nA !== nB {
             nA = nA == nil ? headB : nA?.next
             nB = nB == nil ? headA : nB?.next
         }
-        
+
         return nA
     }
 }

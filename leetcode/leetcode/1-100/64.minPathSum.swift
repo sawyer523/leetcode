@@ -49,17 +49,17 @@ func minPathSum(_ grid: [[Int]]) -> Int {
     let m = grid.count
     let n = grid.first!.count
     var dp = grid[0]
-    
+
     for i in 1..<n {
         dp[i] = dp[i]+dp[i-1]
     }
-    
+
     for i in 1..<m {
         dp[0] += grid[i][0]
         for j in 1..<n {
             dp[j] = grid[i][j] + min(dp[j-1], dp[j])
         }
     }
-    
+
     return dp[n-1]
 }

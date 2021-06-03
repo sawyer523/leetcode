@@ -36,15 +36,15 @@ func singleNumber(_ nums: [Int]) -> [Int] {
     for i in nums {
         bit ^= i
     }
-    
+
     let diff = bit & -bit
-    
+
     var x = 0
     for i in nums {
         if i & diff != 0 {
             x ^= i
         }
     }
-    
+
     return [x, bit^x]
 }

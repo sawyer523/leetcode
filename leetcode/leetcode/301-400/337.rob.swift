@@ -62,7 +62,7 @@ class Solution337 {
      *     }
      * }
      */
-    
+
     public class TreeNode {
         public var val: Int
         public var left: TreeNode?
@@ -73,7 +73,7 @@ class Solution337 {
             self.right = nil
         }
     }
-    
+
     func rob(_ root: TreeNode?) -> Int {
 
         func dfs(_ node: TreeNode?) -> (Int, Int) {
@@ -82,12 +82,12 @@ class Solution337 {
             }
             let l = dfs(root.left)
             let r = dfs(root.right)
-            
+
             return (root.val + l.1 + r.1, max(l.0, l.1) + max(r.0, r.1))
         }
-        
+
         let t = dfs(root)
-        
+
         return max(t.0, t.1)
     }
 }

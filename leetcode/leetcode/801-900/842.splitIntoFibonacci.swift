@@ -72,23 +72,23 @@ class Solution842 {
         _ =  backtrack(index: 0, sum: 0, prev: 0)
         return ans
     }
-    
+
     func backtrack(index: Int, sum: Int, prev: Int) -> Bool {
         if index == n {
             return ans.count >= 3
         }
-        
+
         var cur = 0
         for i in index..<n {
             if index < i && s[index] == "0" {
                 break
             }
-            
+
             cur = cur * 10 + Int(s[i].asciiValue! - 48)
             if cur > Int32.max {
                 break
             }
-            
+
             if ans.count >= 2 {
                 if cur < sum {
                     continue
@@ -97,13 +97,13 @@ class Solution842 {
                     break
                 }
             }
-            
+
             ans.append(cur)
-            
+
             if backtrack(index: i+1, sum: prev+cur, prev: cur) {
                 return true
             }
-            
+
             _ = ans.popLast()
         }
         return false

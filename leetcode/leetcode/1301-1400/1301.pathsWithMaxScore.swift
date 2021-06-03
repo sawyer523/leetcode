@@ -57,7 +57,7 @@ func pathsWithMaxScore(_ board: [String]) -> [Int] {
     countDp[count][count] = 1
     var tmp = 0
     let mod = 1000000007
- 
+
     for i in stride(from: count-1, through: 0, by: -1) {
         for j in stride(from: count-1, through: 0, by: -1) {
             if board[i][j] == "X" {
@@ -71,7 +71,7 @@ func pathsWithMaxScore(_ board: [String]) -> [Int] {
             countDp[i][j] = (countDp[i][j] + (dp[i+1][j+1] == tmp ? countDp[i+1][j+1] : 0)) % mod
         }
     }
-    
+
     let maxSum = dp[0][0]
     let maxPathCount = countDp[0][0]
     return [maxPathCount != 0 ? maxSum : 0, maxPathCount]

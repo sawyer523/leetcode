@@ -55,7 +55,6 @@ n == obstacleGrid[i].length
 obstacleGrid[i][j] 为 0 或 1
 */
 
-
 func uniquePathsWithObstacles(_ obstacleGrid: [[Int]]) -> Int {
     if obstacleGrid[0][0] == 1 {
         return 0
@@ -76,6 +75,6 @@ func uniquePathsWithObstacles(_ obstacleGrid: [[Int]]) -> Int {
             }
         }
     }
-    
+
     return dp[n-1]
 }

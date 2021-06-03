@@ -58,7 +58,7 @@ func reverseWords(_ s: String) -> String {
             ans += " "
         }
     }
-    
+
     while !stack.isEmpty {
         ans += String(stack.popLast()!)
     }

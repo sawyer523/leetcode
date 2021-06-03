@@ -79,7 +79,7 @@ func compress(_ chars: inout [Character]) -> Int {
     for char in chars {
         if let count = dict[char] {
             dict[char] = count + 1
-        } else{
+        } else {
             for k in dict.keys {
                 str += String(k) + (dict[k]! > 1 ? String(dict[k]!) : "")
             }
@@ -87,7 +87,7 @@ func compress(_ chars: inout [Character]) -> Int {
             dict[char] = 1
         }
     }
-    
+
     chars = Array(str)
     return str.count
 }
@@ -95,7 +95,7 @@ func compress(_ chars: inout [Character]) -> Int {
 func compress1(_ chars: inout [Character]) -> Int {
     var anchor = 0
     var write = 0
-    
+
     for read in 0..<chars.count {
         if read+1 == chars.count || chars[read] != chars[read+1] {
             chars[write] = chars[anchor]

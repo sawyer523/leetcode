@@ -51,12 +51,12 @@ func decode(_ encoded: [Int]) -> [Int] {
     for i in 1...n+1 {
         total ^= i
     }
-    
+
     var odd = 0
     for i in stride(from: 1, to: n, by: 2) {
         odd ^= encoded[i]
     }
-    
+
     var perm = [Int](repeating: 0, count: n+1)
     perm[0] = total^odd
     for i in 0..<n {

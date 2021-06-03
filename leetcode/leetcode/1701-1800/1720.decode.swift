@@ -52,6 +52,6 @@ func decode(_ encoded: [Int], _ first: Int) -> [Int] {
     for i in 0..<encoded.count {
         decoded.append(decoded[i] ^ encoded[i] )
     }
-    
+
     return decoded
 }

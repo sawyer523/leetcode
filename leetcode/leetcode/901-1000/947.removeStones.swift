@@ -73,33 +73,33 @@ func removeStones(_ stones: [[Int]]) -> Int {
         }
         return fa[x]!
     }
-    
+
     func union(_ x: Int, _ y: Int) {
         var fx = find(x)
         var fy = find(y)
         if fx == fy {
             return
         }
-        
+
         if rank[fx]! < rank[fy]! {
             (fx, fy) = (fy, fx)
         }
-        
+
         rank[fx]! += rank[fy]!
         fa[fy] = fx
     }
-    
+
     for p in stones {
         union(p[0], p[1]+10000)
     }
-    
+
     var ans = stones.count
-    
+
     for (i, v) in fa {
         if i == v {
             ans -= 1
         }
     }
-    
+
     return ans
 }

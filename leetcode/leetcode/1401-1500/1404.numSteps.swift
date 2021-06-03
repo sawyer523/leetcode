@@ -86,6 +86,6 @@ func numSteps(_ s: String) -> Int {
             }
         }
     }
-    
+
     return index
 }

@@ -54,7 +54,7 @@ func sampleStats(_ count: [Int]) -> [Double] {
     var ans = [Double](repeating: -1, count: 5)
     var c = 0
     var man = 0
-    
+
     while i < j {
         if count[i] == 0 {
             i += 1
@@ -64,7 +64,7 @@ func sampleStats(_ count: [Int]) -> [Double] {
             j -= 1
             continue
         }
-        if count[i] != 0{
+        if count[i] != 0 {
             sum += Double(count[i]*i)
             c += count[i]
             if man < count[i] {
@@ -88,9 +88,9 @@ func sampleStats(_ count: [Int]) -> [Double] {
             }
             j -= 1
         }
-        
+
     }
-    
+
     if i == j {
         sum += Double(count[j]*j)
         c += count[j]
@@ -102,7 +102,7 @@ func sampleStats(_ count: [Int]) -> [Double] {
             ans[1] = Double(j)
         }
     }
-    
+
     ans[2] = sum / Double(c)
 
     var index = 0
@@ -123,7 +123,6 @@ func sampleStats(_ count: [Int]) -> [Double] {
     }
 
     ans[3] = Double(p+q)/2
-    
+
     return ans
 }
-

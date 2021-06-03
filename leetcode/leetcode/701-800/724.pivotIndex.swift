@@ -58,6 +58,6 @@ func pivotIndex(_ nums: [Int]) -> Int {
             }
             sum += v
         }
-            
+
         return -1
 }

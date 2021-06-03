@@ -39,12 +39,12 @@ func firstUniqChar(_ s: String) -> Int {
     for char in s {
         arr[Int(char.asciiValue!) - 97] += 1
     }
-    
+
     for (i, v) in s.enumerated() {
         if arr[Int(v.asciiValue! - 97)] == 1 {
             return i
         }
     }
-    
+
     return -1
 }

@@ -49,18 +49,18 @@ import Foundation
  */
 
 func findRedundantConnection(_ edges: [[Int]]) -> [Int] {
-    func find(_ parent:[Int],_ node:Int) ->Int {
+    func find(_ parent: [Int], _ node: Int) -> Int {
         if parent[node] == -1 {
             return node
         }
-        return find(parent,parent[node])
+        return find(parent, parent[node])
     }
-    var parent = Array(repeating:-1,count:edges.count + 1)
+    var parent = Array(repeating: -1, count: edges.count + 1)
     for i in 0..<edges.count {
         let e1 = edges[i][0]
         let e2 = edges[i][1]
-        let p1 = find(parent,e1)
-        let p2 = find(parent,e2)
+        let p1 = find(parent, e1)
+        let p2 = find(parent, e2)
         if p1 == p2 {
             return edges[i]
         }

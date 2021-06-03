@@ -55,10 +55,10 @@ func findLUSlength(_ strs: [String]) -> Int {
             }
             i += 1
         }
-        
+
         return j == a.count
     }
-    
+
     for i in strs {
         m[i] = Array(i)
     }
@@ -69,7 +69,7 @@ func findLUSlength(_ strs: [String]) -> Int {
             if i == j {
                 continue
             }
-            
+
             if isSub(strs[i], strs[j]) {
                 end = false
                 break
@@ -79,6 +79,6 @@ func findLUSlength(_ strs: [String]) -> Int {
             ans = max(ans, strs[i].count)
         }
     }
-    
+
     return ans
 }

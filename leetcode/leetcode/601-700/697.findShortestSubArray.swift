@@ -56,7 +56,7 @@ func findShortestSubArray(_ nums: [Int]) -> Int {
             m[v] = (1, i, i)
         }
     }
-    
+
     var ans = 0
     var maxCnt = 0
     for (_, v) in m {

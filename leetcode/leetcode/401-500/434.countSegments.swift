@@ -32,11 +32,11 @@ import Foundation
 func countSegments(_ s: String) -> Int {
     let sArr = Array(s)
     var idx = 0, ans = 0
-    
+
     while idx < sArr.count {
         while idx < sArr.count && sArr[idx].isWhitespace {
             idx += 1
-            
+
         }
         if idx == sArr.count {
             break
@@ -44,7 +44,7 @@ func countSegments(_ s: String) -> Int {
         ans += 1
         while idx < sArr.count && !sArr[idx].isWhitespace {
             idx += 1
-            
+
         }
     }
     return ans

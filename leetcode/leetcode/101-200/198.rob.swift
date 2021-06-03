@@ -43,19 +43,19 @@ func rob(_ nums: [Int]) -> Int {
     if nums.isEmpty {
         return 0
     }
-    
+
     if nums.count == 1 {
         return nums[0]
     }
-    
+
     // dp[n] = max(dp[n-1], dp[n-2] + nuns[n])
-    
+
     var prev = nums[0]
     var curr = max(nums[0], nums[1])
-    
+
     for i in 2..<nums.count {
         (prev, curr) = (curr, max(prev+nums[i], curr))
     }
-    
+
     return curr
 }

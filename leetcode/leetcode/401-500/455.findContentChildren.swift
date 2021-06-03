@@ -52,7 +52,7 @@ import Foundation
 func findContentChildren(_ g: [Int], _ s: [Int]) -> Int {
     let g = g.sorted()
     let s = s.sorted()
-    
+
     var ans = 0
     var fIdx = s.count - 1
     var cIdx = g.count - 1
@@ -62,9 +62,9 @@ func findContentChildren(_ g: [Int], _ s: [Int]) -> Int {
             ans += 1
             fIdx -= 1
         }
-        
+
         cIdx -= 1
     }
-    
+
     return ans
 }

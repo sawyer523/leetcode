@@ -55,11 +55,11 @@ class Solution547 {
     if M.isEmpty || M[0].isEmpty {
         return 0
     }
-    
+
     let uf = UnionFind(grid: M)
     let m = M.count
     let n = M[0].count
-    
+
     for i in 0..<m {
         for j in 0..<n {
             if i == j {
@@ -68,10 +68,10 @@ class Solution547 {
             if M[i][j] == 1 {
                 uf.union(x: i, y: j)
             }
-            
+
         }
     }
-    
+
     let arr = uf.parent
     var count = 0
     for i in 0..<m {
@@ -79,7 +79,7 @@ class Solution547 {
             count += 1
         }
     }
-    
+
     return count
 }
 }
@@ -92,7 +92,7 @@ class UnionFind {
         self.parent = [Int](repeating: -1, count: m)
         self.rank = [Int](repeating: 0, count: m)
     }
-    
+
     func find(i: Int) -> Int {
         if parent[i] == -1 {
             return i
@@ -102,7 +102,7 @@ class UnionFind {
         }
         return parent[i]
     }
-    
+
     func union(x: Int, y: Int) {
         let rootx = find(i: x)
         let rooty = find(i: y)

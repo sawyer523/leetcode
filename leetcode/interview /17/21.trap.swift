@@ -24,6 +24,6 @@ func trap(_ height: [Int]) -> Int {
             right -= 1
         }
     }
-    
+
     return res
 }

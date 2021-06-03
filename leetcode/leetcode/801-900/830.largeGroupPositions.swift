@@ -75,7 +75,7 @@ func largeGroupPositions(_ s: String) -> [[Int]] {
             count += 1
         }
     }
-    
+
     if 3 <= count {
         ans.append([start, arr.count - 1])
     }

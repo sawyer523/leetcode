@@ -48,13 +48,13 @@ func findDisappearedNumbers(_ nums: [Int]) -> [Int] {
             list[index-1] = -target
         }
     }
-    
+
     var ans: [Int] = []
     for j in 0..<list.count {
         if list[j] > 0 {
             ans.append(j+1)
         }
     }
-    
+
     return ans
 }

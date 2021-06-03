@@ -38,7 +38,7 @@ func nextGreaterElements(_ nums: [Int]) -> [Int] {
     var ans = [Int](repeating: -1, count: n)
     var stack: [Int] = []
     for i in 0..<2*n-1 {
-        while !stack.isEmpty && nums[stack.last!] < nums[i%n]{
+        while !stack.isEmpty && nums[stack.last!] < nums[i%n] {
             ans[stack.popLast()!] = nums[i%n]
         }
         stack.append(i%n)

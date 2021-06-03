@@ -68,13 +68,13 @@ func breakfastNumber(_ staple: [Int], _ drinks: [Int], _ x: Int) -> Int {
             let mid = left + (right - left) / 2
             if arr[mid] > target {
                 right = mid - 1
-            } else  {
+            } else {
                 left = mid + 1
             }
         }
         return left
     }
-    
+
     let staple = staple.sorted()
     let drinks = drinks.sorted()
     var ans = 0
@@ -86,24 +86,24 @@ func breakfastNumber(_ staple: [Int], _ drinks: [Int], _ x: Int) -> Int {
         }
         ans += idx
     }
-    
+
     return ans % 1000000007
 }
 
 func breakfastNumber1(_ staple: [Int], _ drinks: [Int], _ x: Int) -> Int {
-    
+
     var xArr: [Int] = Array(repeating: 0, count: x)
-    
+
     for s in staple {
         if s < x {
             xArr[s] += 1
         }
     }
-    
+
     for  i in 1..<x {
         xArr[i] += xArr[i-1]
     }
-    
+
     var ans = 0
     for d in drinks {
         let left = x - d
@@ -111,6 +111,6 @@ func breakfastNumber1(_ staple: [Int], _ drinks: [Int], _ x: Int) -> Int {
             ans += xArr[left]
         }
     }
-    
+
     return ans % 1000000007
 }

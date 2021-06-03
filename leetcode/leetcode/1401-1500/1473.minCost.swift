@@ -67,23 +67,22 @@ import Foundation
 
  */
 
-
 func minCost(_ houses: [Int], _ cost: [[Int]], _ m: Int, _ n: Int, _ target: Int) -> Int {
     let inf = Int.max / 2
     var houses = houses
     for i in 0..<houses.count {
         houses[i] -= 1
     }
-    
+
     var dp = [[[Int]]](repeating: [[Int]](repeating: [Int](repeating: inf, count: target), count: n), count: m)
     var best = [[(Int, Int, Int)]](repeating: [(Int, Int, Int)](repeating: (inf, -1, inf), count: target), count: m)
-    
+
     for i in 0..<m {
         for j in 0..<n {
             if houses[i] != -1 && houses[i] != j {
                 continue
             }
-            
+
             for k in 0..<target {
                 if i == 0 {
                     if k == 0 {
@@ -96,11 +95,11 @@ func minCost(_ houses: [Int], _ cost: [[Int]], _ m: Int, _ n: Int, _ target: Int
                         dp[i][j][k] = min(dp[i][j][k], j == b.1 ? b.2 : b.0)
                     }
                 }
-                
+
                 if dp[i][j][k] != inf && houses[i] == -1 {
                     dp[i][j][k] += cost[i][j]
                 }
-                
+
                 var b = best[i][k]
                 if dp[i][j][k] < b.0 {
                     (b.2, b.0, b.1) = (b.0, dp[i][j][k], j)
@@ -111,11 +110,11 @@ func minCost(_ houses: [Int], _ cost: [[Int]], _ m: Int, _ n: Int, _ target: Int
             }
         }
     }
-    
+
     var ans = inf
     for res in dp[m-1] {
         ans = min(ans, res[target-1])
     }
-    
+
     return ans == inf ? -1 : ans
 }

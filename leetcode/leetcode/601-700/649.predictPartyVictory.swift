@@ -72,7 +72,7 @@ func predictPartyVictory(_ senate: String) -> String {
             dire.append(k)
         }
     }
-    
+
     let len = senate.count
     var i = 0
     while 0 < radiant.count &&  0 < dire.count {
@@ -84,8 +84,8 @@ func predictPartyVictory(_ senate: String) -> String {
         i += 1
         radiant = radiant.dropFirst()
         dire = dire.dropFirst()
-        
+
     }
-    
+
     return radiant.count > 0 ? "Radiant" : "Dire"
 }

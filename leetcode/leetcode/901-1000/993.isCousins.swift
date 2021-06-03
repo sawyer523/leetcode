@@ -59,32 +59,32 @@ func isCousins(_ root: TreeNode?, _ x: Int, _ y: Int) -> Bool {
     var yDepth = 0
     var xFound = false
     var yFound = false
-    
+
     func dfs(_ node: TreeNode?, _ parent: TreeNode?, _ depth: Int) {
         if node == nil {
             return
         }
-        
+
         if node!.val == x {
             (xParent, xDepth, xFound) = (parent, depth, true)
         } else if node?.val == y {
             (yParent, yDepth, yFound) = (parent, depth, true)
         }
-        
+
         if xFound && yFound {
             return
         }
-        
+
         dfs(node?.left, node, depth+1)
-        
+
         if xFound && yFound {
             return
         }
-        
+
         dfs(node?.right, node, depth+1)
     }
-    
+
     dfs(root, nil, 0)
-    
+
     return xDepth == yDepth && xParent !== yParent
 }

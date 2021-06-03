@@ -58,8 +58,7 @@ func medianSlidingWindow(_ nums: [Int], _ k: Int) -> [Double] {
             return Double((Double(arr[arr.count/2]) + Double(arr[arr.count/2 - 1])) / 2.0)
         }
     }
-    
-    
+
     func binaryRemove(_ num: Int, arr: inout [Int]) {
         var left = 0
         var right = arr.count - 1
@@ -74,11 +73,10 @@ func medianSlidingWindow(_ nums: [Int], _ k: Int) -> [Double] {
                 break
             }
         }
-        
+
         arr.remove(at: left)
     }
-    
-    
+
     func binaryInsert(_ num: Int, arr: inout [Int]) {
         var left = 0
         var right = arr.count - 1
@@ -93,16 +91,16 @@ func medianSlidingWindow(_ nums: [Int], _ k: Int) -> [Double] {
                 break
             }
         }
-        
+
         arr.insert(num, at: left)
     }
-    
+
     guard nums.count > 0 else { return [] }
     var medians = [Double]()
     var slidingWindow = [Int]()
-    
+
     for i in 0..<nums.count {
-        if i < k  {
+        if i < k {
             binaryInsert(nums[i], arr: &slidingWindow)
         } else {
             medians.append(getMedian(&slidingWindow))

@@ -57,7 +57,7 @@ func combinationSum2(_ candidates: [Int], _ target: Int) -> [[Int]] {
             res.append(path)
             return
         }
-        
+
         for i in begin..<end {
             if target-candidates[i] < 0 {
                 break
@@ -70,7 +70,7 @@ func combinationSum2(_ candidates: [Int], _ target: Int) -> [[Int]] {
             _ = path.popLast()
         }
     }
-    
+
     dfs(0, n, target)
     return res
 }

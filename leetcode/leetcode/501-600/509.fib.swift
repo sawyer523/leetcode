@@ -70,7 +70,7 @@ class Solution509 {
 //            return mem[n]!
 //        }
 //    }
-    
+
     func fib(_ n: Int) -> Int {
         if n < 2 { return n }
         var result = Array(repeating: 0, count: n+1)

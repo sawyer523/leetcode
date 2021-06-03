@@ -58,9 +58,9 @@ import Foundation
 func updateMatrix(_ mat: [[Int]]) -> [[Int]] {
     let m = mat.count
     let n = mat[0].count
-    
+
     var dp = [[Int]](repeating: [Int](repeating: Int.max/2, count: n), count: m)
-    
+
     for i in 0..<m {
         for j in 0..<n {
             if mat[i][j] == 0 {
@@ -68,19 +68,19 @@ func updateMatrix(_ mat: [[Int]]) -> [[Int]] {
             }
         }
     }
-    
+
     for i in 0..<m {
         for j in 0..<n {
             if 0 <= i-1 {
                 dp[i][j] = min(dp[i][j], dp[i-1][j] + 1)
             }
-            
+
             if 0 <= j-1 {
                 dp[i][j] = min(dp[i][j], dp[i][j-1] + 1)
             }
         }
     }
-    
+
     for i in stride(from: m-1, through: 0, by: -1) {
         for j in stride(from: n-1, through: 0, by: -1) {
             if i + 1 < m {
@@ -91,6 +91,6 @@ func updateMatrix(_ mat: [[Int]]) -> [[Int]] {
             }
         }
     }
-    
+
     return dp
 }

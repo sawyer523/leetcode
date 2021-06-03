@@ -31,7 +31,6 @@ import Foundation
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-
 class SolutionLevelOrder {
     public class TreeNode {
         public var val: Int
@@ -43,21 +42,21 @@ class SolutionLevelOrder {
             self.right = nil
         }
     }
-    
+
     func zigzagLevelOrder(_ root: TreeNode?) -> [[Int]] {
         return BFS(root)
     }
-    
+
     func BFS(_ root: TreeNode?) -> [[Int]] {
         guard let root = root else {
             return []
         }
-        
+
         var queue = [root]
         var ans: [[Int]] = []
         var height = 0
         var row: [Int] = []
-        
+
         while 0 < queue.count {
            let q = queue
             queue.removeAll()
@@ -71,44 +70,44 @@ class SolutionLevelOrder {
                     queue.append(right)
                 }
             }
-            
+
             if height & 1 == 1 {
                 ans.append(row.reversed())
             } else {
                 ans.append(row)
             }
-            
+
             height += 1
         }
         return ans
     }
-    
+
     func DFS(_ root: TreeNode?) -> [[Int]] {
         guard let root = root else {
             return []
         }
-        
+
         var ans: [[Int]] = []
-        
+
         func _dfs(_ root: TreeNode?, _ level: Int, _ positive: Bool) {
             guard let root = root else {
                 return
             }
-            
+
             if ans.count == level {
                 ans.append([])
             }
-            
+
             if positive {
                 ans[level].append(root.val)
             } else {
                 ans[level].insert(root.val, at: 0)
             }
-            
+
             _dfs(root.left, level+1, !positive)
             _dfs(root.right, level+1, !positive)
         }
-        
+
         _dfs(root, 0, true)
         return ans
     }

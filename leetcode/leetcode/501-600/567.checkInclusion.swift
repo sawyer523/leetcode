@@ -48,17 +48,17 @@ func checkInclusion(_ s1: String, _ s2: String) -> Bool {
     if m < n {
         return false
     }
-    
+
     let s2Arr = Array(s2)
 
     var ans1 = [Int](repeating: 0, count: 26)
     let zero = Character("a").asciiValue!
-    
+
     for (i, v) in s1.enumerated() {
         ans1[Int(v.asciiValue! - zero)] += 1
         ans1[Int(s2Arr[i].asciiValue! - zero)] -= 1
     }
-    
+
     func allZero() -> Bool {
         for i in 0..<26 {
             if ans1[i] != 0 {
@@ -67,11 +67,11 @@ func checkInclusion(_ s1: String, _ s2: String) -> Bool {
         }
         return true
     }
-    
+
     if allZero() {
         return true
     }
-    
+
     for i in n..<m {
         ans1[Int(s2Arr[i].asciiValue! - zero)] -= 1
         ans1[Int(s2Arr[i-n].asciiValue! - zero)] += 1
@@ -79,6 +79,6 @@ func checkInclusion(_ s1: String, _ s2: String) -> Bool {
             return true
         }
     }
-    
+
     return false
 }

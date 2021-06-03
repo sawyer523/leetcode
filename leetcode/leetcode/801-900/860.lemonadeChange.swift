@@ -68,10 +68,10 @@ func lemonadeChange(_ bills: [Int]) -> Bool {
     if 9 < bills.first! {
         return false
     }
-    
+
     var count5  = 1
     var count10 = 0
-    
+
     for i in 1..<bills.count {
         switch bills[i] {
         case 5:

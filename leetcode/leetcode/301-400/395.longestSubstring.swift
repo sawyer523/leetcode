@@ -70,7 +70,7 @@ func longestSubstring(_ s: String, _ k: Int) -> Int {
 //    }
 //
 //    return len
-    
+
     let baseAscii = Character("a").asciiValue!
     let arr = Array(s)
     var ans = 0
@@ -85,13 +85,13 @@ func longestSubstring(_ s: String, _ k: Int) -> Int {
                 total += 1
                 lessK += 1
             }
-            
+
             cnt[ascii] += 1
             if cnt[ascii] == k {
                 lessK -= 1
             }
-            
-            while t < total  {
+
+            while t < total {
                 let ascii = Int(arr[l].asciiValue! - baseAscii)
                 if cnt[ascii] == k {
                     lessK += 1
@@ -108,6 +108,6 @@ func longestSubstring(_ s: String, _ k: Int) -> Int {
             }
         }
     }
-    
+
     return ans
 }

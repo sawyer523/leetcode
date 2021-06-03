@@ -30,9 +30,8 @@ import Foundation
  输出：1->2->2->4->3->5
  */
 
-
 class Solution86 {
-   
+
     public class ListNode {
         public var val: Int
         public var next: ListNode?
@@ -41,15 +40,15 @@ class Solution86 {
             self.next = nil
         }
     }
-   
+
     func partition(_ head: ListNode?, _ x: Int) -> ListNode? {
         var p = head
         var p1 = ListNode(0)
         let p1Head = p1
-        
+
         var p2 = ListNode(0)
         let p2Head = p2
-        
+
         while p != nil {
             if p!.val < x {
                 p1.next = p
@@ -60,7 +59,7 @@ class Solution86 {
             }
             p = p?.next
         }
-        
+
         p1.next = nil
         p2.next = nil
         p1.next = p2Head.next

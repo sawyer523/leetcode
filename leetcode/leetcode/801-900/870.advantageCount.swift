@@ -48,11 +48,11 @@ func advantageCount(_ A: [Int], _ B: [Int]) -> [Int] {
         if target < arr[left] {
             return left
         }
-        
+
         if arr[right] <= target {
             return left
         }
-        
+
         while left < right {
             let mid = left + (right - left) / 2
             if arr[mid] <= target {
@@ -61,10 +61,10 @@ func advantageCount(_ A: [Int], _ B: [Int]) -> [Int] {
                 right = mid
             }
         }
-        
+
         return right
     }
-    
+
     var sortA = A.sorted()
     var ans: [Int] = []
     for target in B {
@@ -72,6 +72,6 @@ func advantageCount(_ A: [Int], _ B: [Int]) -> [Int] {
         ans.append(sortA[index])
         sortA.remove(at: index)
     }
-    
+
     return ans
 }

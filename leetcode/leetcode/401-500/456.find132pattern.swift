@@ -53,13 +53,12 @@ func find132pattern(_ nums: [Int]) -> Bool {
         if num < maxK {
             return true
         }
-        
+
         while !stack.isEmpty && stack.last! < num {
             maxK = max(maxK, stack.removeLast())
         }
-        
+
         stack.append(num)
     }
     return false
 }
-

@@ -56,9 +56,9 @@ func findTheDifference(_ s: String, _ t: String) -> Character {
     if s == "" {
         return t.first!
     }
-    
+
     var res = 0
-    
+
     for ch in s {
         res ^= Int(ch.asciiValue!)
     }
@@ -66,6 +66,6 @@ func findTheDifference(_ s: String, _ t: String) -> Character {
     for ch in t {
         res ^= Int(ch.asciiValue!)
     }
-    
+
     return Character(Unicode.Scalar(res)!)
 }

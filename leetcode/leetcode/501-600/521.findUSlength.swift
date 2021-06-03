@@ -49,7 +49,6 @@ import Foundation
  字符串中的字符仅含有 'a'~'z' 。
  */
 
-
 func findLUSlength(_ a: String, _ b: String) -> Int {
     return a == b ? -1 : max(a.count, b.count)
 }

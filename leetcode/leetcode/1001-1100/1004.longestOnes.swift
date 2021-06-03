@@ -64,14 +64,14 @@ func longestOnes(_ A: [Int], _ K: Int) -> Int {
      
      return n - left
      */
-    
+
     var letf = 0
     var zeroCount = 0
     for right in 0..<A.count {
         if A[right] == 0 {
             zeroCount += 1
         }
-        
+
         if K < zeroCount {
             if A[letf] == 0 {
                 zeroCount -= 1
@@ -79,6 +79,6 @@ func longestOnes(_ A: [Int], _ K: Int) -> Int {
             letf += 1
         }
     }
-    
+
     return A.count - letf
 }

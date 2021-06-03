@@ -35,9 +35,8 @@ import Foundation
 
  */
 
-
 func singleNumber1(_ nums: [Int]) -> Int {
-    //set
+    // set
 //    var set: Set<Int> = []
 //    var sum = 0
 //    var sumArr = 0

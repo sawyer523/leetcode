@@ -44,13 +44,12 @@ import Foundation
 
  */
 
-
 func reverseOnlyLetters(_ S: String) -> String {
     var arr = Array(S)
     var start = 0
     var end = arr.count - 1
-    
-    func isChar(_ c :Character) -> Bool {
+
+    func isChar(_ c: Character) -> Bool {
         switch Int(c.asciiValue!) {
         case 65...90:
             fallthrough
@@ -60,22 +59,22 @@ func reverseOnlyLetters(_ S: String) -> String {
             return false
         }
     }
-    
+
     while start < end {
         if !isChar(arr[start]) {
             start += 1
             continue
         }
-        
+
         if !isChar(arr[end]) {
             end -= 1
             continue
         }
-        
+
         (arr[start], arr[end]) = (arr[end], arr[start])
         start += 1
         end -= 1
     }
-    
+
     return String(arr)
 }

@@ -65,12 +65,12 @@ func combinationSum(_ candidates: [Int], _ target: Int) -> [[Int]] {
             path.removeAll()
             return
         }
-        
+
         for i in begin..<end {
             if target - candidates[i] < 0 {
                 break
             }
-            
+
             path.append(candidates[i])
             dfs(i, n, target - candidates[i])
             _ = path.popLast()

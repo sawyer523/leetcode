@@ -60,4 +60,3 @@ func minDiffInBST(_ root: TreeNode?) -> Int {
     dfs(root)
     return ans
 }
-

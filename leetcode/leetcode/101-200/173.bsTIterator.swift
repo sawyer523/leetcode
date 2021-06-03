@@ -71,16 +71,16 @@ class BSTIterator {
             self.right = right
         }
     }
-    
+
     var statck = [TreeNode]()
-    
+
     init(_ root: TreeNode?) {
         guard let node = root else {
             return
         }
         preloadNode(node)
     }
-    
+
     func preloadNode(_ node: TreeNode?) {
         var curNode: TreeNode? = node
         while curNode != nil {
@@ -88,7 +88,7 @@ class BSTIterator {
             curNode = curNode!.left
         }
     }
-    
+
     func next() -> Int {
         let node = statck.removeLast()
         if let node2 = node.right {
@@ -96,7 +96,7 @@ class BSTIterator {
         }
         return node.val
     }
-    
+
     func hasNext() -> Bool {
         return statck.count > 0
     }

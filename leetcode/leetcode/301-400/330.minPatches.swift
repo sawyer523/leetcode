@@ -55,6 +55,6 @@ func minPatches(_ nums: [Int], _ n: Int) -> Int {
             ans += 1
         }
     }
-    
+
     return ans
 }

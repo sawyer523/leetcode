@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 /*
  92. 反转链表 II
  难度
@@ -41,7 +40,7 @@ import Foundation
  * }
  */
 class Solution92 {
-        
+
     public class ListNode {
         public var val: Int
         public var next: ListNode?
@@ -49,20 +48,20 @@ class Solution92 {
         public init(_ val: Int) { self.val = val; self.next = nil; }
         public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
     }
-    
+
     func reverseBetween(_ head: ListNode?, _ left: Int, _ right: Int) -> ListNode? {
         if head == nil {
             return nil
         }
-        
+
         let dummy = ListNode(0)
         dummy.next = head
-        
+
         var pre: ListNode? = dummy
         for _ in 0..<(left - 1) {
             pre = pre?.next
         }
-        
+
         let cur: ListNode? = pre?.next
         var next: ListNode? = cur?.next
         for _ in 0..<(right - left) {
@@ -71,8 +70,7 @@ class Solution92 {
             pre?.next = next
             next = cur?.next
         }
-        
+
         return dummy.next
     }
 }
-

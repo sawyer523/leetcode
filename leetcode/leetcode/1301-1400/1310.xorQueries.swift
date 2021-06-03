@@ -61,11 +61,10 @@ func xorQueries(_ arr: [Int], _ queries: [[Int]]) -> [Int] {
     for i in 0..<arr.count {
         xors[i+1] = xors[i]^arr[i]
     }
-    
+
     var res = [Int](repeating: 0, count: queries.count)
     for i in 0..<queries.count {
         res[i] = xors[queries[i][0]] ^ xors[queries[i][1]+1]
     }
     return res
 }
-

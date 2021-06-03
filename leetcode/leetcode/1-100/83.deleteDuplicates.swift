@@ -31,25 +31,24 @@ import Foundation
 
  */
 
-
-fileprivate class ListNode {
+private class ListNode {
      var val: Int
      var next: ListNode?
      init() { self.val = 0; self.next = nil; }
      init(_ val: Int) { self.val = val; self.next = nil; }
      init(_ val: Int, _ next: ListNode?) {
-        self.val = val; self.next = next;
+        self.val = val; self.next = next
      }
 }
 
-fileprivate func deleteDuplicates(_ head: ListNode?) -> ListNode? {
+private func deleteDuplicates(_ head: ListNode?) -> ListNode? {
     if head == nil {
         return nil
     }
-    
+
     let root = head
     var temp = root
-    
+
     while temp?.next != nil {
         if temp?.val == temp?.next?.val {
             temp?.next = temp?.next?.next

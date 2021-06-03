@@ -59,7 +59,7 @@ class NestedIterator {
      *     public func getList() -> [NestedInteger]
      * }
      */
-    
+
     class NestedInteger {
         // Return true if this NestedInteger holds a single integer, rather than a nested list.
         public func isInteger() -> Bool {return false}
@@ -74,7 +74,7 @@ class NestedIterator {
         // The result is undefined if this NestedInteger holds a single integer
         public func getList() -> [NestedInteger] {return []}
     }
-    
+
     /**
      private var val: [Int] = []
      
@@ -101,17 +101,17 @@ class NestedIterator {
          }
      }
      */
-   
+
     var stack: [NestedInteger] = []
-    
+
     init(_ nestedList: [NestedInteger]) {
         self.stack = nestedList.reversed()
     }
-    
+
     func next() -> Int {
         return self.stack.removeLast().getInteger()
     }
-    
+
     func hasNext() -> Bool {
         while !stack.isEmpty {
             let nest = stack.last!

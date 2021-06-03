@@ -71,11 +71,11 @@ func countTriplets(_ arr: [Int]) -> Int {
         if let m = cnt[s^arr[i]] {
             ans += m*i - total[s^arr[i]]!
         }
-        
+
         cnt[s, default: 0] += 1
         total[s, default: 0] += i
         s ^= arr[i]
     }
-    
+
     return ans
 }

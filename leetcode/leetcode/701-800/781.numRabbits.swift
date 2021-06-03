@@ -49,11 +49,11 @@ func numRabbits(_ answers: [Int]) -> Int {
     for i in answers {
         count[i, default: 0] += 1
     }
-    
+
     var ans = 0
     for (k, v) in count {
         ans += (k + v) / (k + 1) * (k + 1)
     }
-    
+
     return ans
 }

@@ -61,6 +61,6 @@ func prefixesDivBy5(_ A: [Int]) -> [Bool] {
                 ans[i] = true
             }
         }
-        
+
         return ans
 }

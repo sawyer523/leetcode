@@ -53,7 +53,7 @@ import Foundation
  insert、search 和 startsWith 调用次数 总计 不超过 3 * 104 次
  */
 
-fileprivate class TrieNode {
+private class TrieNode {
     var value: Character
     var children: [Character: TrieNode]
     var isWord: Bool
@@ -64,7 +64,7 @@ fileprivate class TrieNode {
     }
 }
 
-fileprivate class Trie {
+private class Trie {
     private var root: TrieNode
     private var ws: TrieNode
     /** Initialize your data structure here. */
@@ -72,7 +72,7 @@ fileprivate class Trie {
         root = TrieNode(c: " ")
         ws = root
     }
-    
+
     /** Inserts a word into the trie. */
     func insert(_ word: String) {
         ws = root
@@ -87,7 +87,7 @@ fileprivate class Trie {
         }
         ws.isWord = true
     }
-    
+
     /** Returns if the word is in the trie. */
     func search(_ word: String) -> Bool {
         ws = root
@@ -100,7 +100,7 @@ fileprivate class Trie {
         }
         return ws.isWord
     }
-    
+
     /** Returns if there is any word in the trie that starts with the given prefix. */
     func startsWith(_ prefix: String) -> Bool {
         ws = root

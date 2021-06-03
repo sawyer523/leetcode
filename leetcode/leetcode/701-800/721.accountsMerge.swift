@@ -46,13 +46,12 @@ import Foundation
  accounts[i][j]的长度将在[1，30]的范围内。
  */
 
-
 func accountsMerge(_ accounts: [[String]]) -> [[String]] {
     var parent: [Int: Int] = [:]
     for i in 0..<accounts.count {
         parent[i] = i
     }
-    
+
     func find(_ i: Int) -> Int {
         var i = i
         while i != parent[i] {
@@ -60,7 +59,7 @@ func accountsMerge(_ accounts: [[String]]) -> [[String]] {
         }
         return i
     }
-    
+
     var emailToIndex: [String: Int] = [:]
     for (i, account) in accounts.enumerated() {
         for j in 1..<account.count {
@@ -72,7 +71,7 @@ func accountsMerge(_ accounts: [[String]]) -> [[String]] {
             }
         }
     }
-    
+
     var merged: [Int: [String]] = [:]
     for email in emailToIndex.keys {
         let rootIndex = find(emailToIndex[email]!)
@@ -81,13 +80,13 @@ func accountsMerge(_ accounts: [[String]]) -> [[String]] {
         }
         merged[rootIndex]!.append(email)
     }
-    
+
     var res: [[String]] = []
     for (i, emails) in merged {
         var emails = emails
         emails.sort()
         res.append([accounts[i][0]] + emails)
     }
-    
+
     return res
 }

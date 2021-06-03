@@ -46,7 +46,7 @@ import Foundation
  */
 
 class MyHashSet {
-    
+
 //    private var myHash: [Int]
 //    /** Initialize your data structure here. */
 //    init() {
@@ -65,21 +65,21 @@ class MyHashSet {
 //    func contains(_ key: Int) -> Bool {
 //        return  ((myHash[key>>5] & (1<<(key&31))) != 0)
 //    }
-    
+
     private var myHash: Set<Int>
     /** Initialize your data structure here. */
     init() {
         self.myHash = []
     }
-    
+
     func add(_ key: Int) {
         myHash.insert(key)
     }
-    
+
     func remove(_ key: Int) {
         self.myHash.remove(key)
     }
-    
+
     /** Returns true if this set contains the specified element */
     func contains(_ key: Int) -> Bool {
         return  self.myHash.contains(key)

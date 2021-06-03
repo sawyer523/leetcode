@@ -79,6 +79,6 @@ func numDecodings(_ s: String) -> Int {
         }
         (a, b) = (b, c)
     }
-    
+
     return c
 }

@@ -60,58 +60,58 @@ import Foundation
  */
 
 func smallestStringWithSwaps(_ s: String, _ pairs: [[Int]]) -> String {
-        let n = s.count
-        var fa: [Int] = [Int](repeating: 0, count: n)
-        var rand = [Int](repeating: 1, count: n)
-        for i in 0..<n {
-            fa[i] = i
+    let n = s.count
+    var fa: [Int] = [Int](repeating: 0, count: n)
+    var rand = [Int](repeating: 1, count: n)
+    for i in 0..<n {
+        fa[i] = i
+    }
+    func find(_ x: Int) -> Int {
+        if fa[x] != x {
+            fa[x] = find(fa[x])
         }
-        func find(_ x: Int) -> Int {
-            if fa[x] != x {
-                fa[x] = find(fa[x])
-            }
-            return fa[x]
+        return fa[x]
+    }
+
+    func union(_ x: Int, _ y: Int) {
+        var (fx, fy) = (find(x), find(y))
+        if fx == fy {
+            return
         }
-        
-        func union(_ x: Int, _ y: Int) {
-            var (fx, fy) = (find(x), find(y))
-            if fx == fy {
-                return
-            }
-            
-            if rand[fx] < rand[fy] {
-                (fx, fy) = (fy, fx)
-            }
-            rand[fx] += rand[fy]
-            fa[fy] = fx
+
+        if rand[fx] < rand[fy] {
+            (fx, fy) = (fy, fx)
         }
-        
-        for p in pairs {
-            union(p[0], p[1])
-        }
-        
-        let sArr = Array(s)
-        var groups = [[Character]](repeating: [], count: n)
+        rand[fx] += rand[fy]
+        fa[fy] = fx
+    }
+
+    for p in pairs {
+        union(p[0], p[1])
+    }
+
+    let sArr = Array(s)
+    var groups = [[Character]](repeating: [], count: n)
     for (i, v) in groups.enumerated() {
-            let f = find(i)
+        let f = find(i)
         if v.isEmpty {
             groups[f] = [s[i]]
         } else {
             print(groups[f], sArr[i])
-//            var t = groups[f] as [Character]
-//            groups[f] = t.append(sArr[i])
+            //            var t = groups[f] as [Character]
+            //            groups[f] = t.append(sArr[i])
         }
-        }
-        for (i, v) in groups.enumerated() {
-            groups[i] = v.sorted()
-        }
-        
+    }
+    for (i, v) in groups.enumerated() {
+        groups[i] = v.sorted()
+    }
+
     let ans = [Character](repeating: " ", count: n)
     for _ in 0..<ans.count {
-//            let f = find(i)
-//            ans[i] = groups[f][0]
-//            groups[f] = Array(groups[f].dropFirst())
-        }
-        
-        return String(ans)
+        //            let f = find(i)
+        //            ans[i] = groups[f][0]
+        //            groups[f] = Array(groups[f].dropFirst())
+    }
+
+    return String(ans)
 }

@@ -60,15 +60,15 @@ func judgeSquareSum(_ c: Int) -> Bool {
         if sum == c {
             return true
         }
-        
+
         if sum < c {
             left += 1
         }
-        
+
         if c < sum {
             right -= 1
         }
     }
-    
+
     return false
 }

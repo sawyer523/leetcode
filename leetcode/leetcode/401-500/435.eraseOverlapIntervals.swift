@@ -54,7 +54,7 @@ func eraseOverlapIntervals(_ intervals: [[Int]]) -> Int {
     let arr = intervals.sorted { (a, b) -> Bool in
         a.last! <= b.last!
     }
-    
+
     var count = 1
     var xEnd = arr[0][1]
     for interval in arr {
@@ -63,6 +63,6 @@ func eraseOverlapIntervals(_ intervals: [[Int]]) -> Int {
             xEnd = interval[1]
         }
     }
-    
+
     return intervals.count - count
 }

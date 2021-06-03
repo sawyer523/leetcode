@@ -57,7 +57,7 @@ class NumArray {
             self.sums[i+1] = self.sums[i] + v
         }
     }
-    
+
     func sumRange(_ i: Int, _ j: Int) -> Int {
         return sums[j+1] - sums[i]
     }

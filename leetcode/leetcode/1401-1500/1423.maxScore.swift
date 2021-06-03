@@ -69,7 +69,7 @@ func maxScore(_ cardPoints: [Int], _ k: Int) -> Int {
         for i in 0..<windowSize {
             sum += cardPoints[i]
         }
-        
+
         total = sum
         var minSum = sum
         for i in windowSize..<n {
@@ -77,6 +77,6 @@ func maxScore(_ cardPoints: [Int], _ k: Int) -> Int {
             minSum = min(minSum, sum)
             total += cardPoints[i]
         }
-        
+
         return total-minSum
 }

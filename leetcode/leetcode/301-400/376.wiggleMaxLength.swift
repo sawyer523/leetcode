@@ -47,12 +47,11 @@ import Foundation
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-
 func wiggleMaxLength(_ nums: [Int]) -> Int {
     if nums.count < 2 {
         return nums.count
     }
-    
+
     var count = 1
     var prevDiff = nums[1] - nums[0]
     if prevDiff != 0 {
@@ -66,7 +65,7 @@ func wiggleMaxLength(_ nums: [Int]) -> Int {
             prevDiff = diff
         }
     }
-    
+
     return count
 }
 
@@ -75,10 +74,10 @@ func wiggleMaxLength1(_ nums: [Int]) -> Int {
     if nums.count < 2 {
         return nums.count
     }
-    
+
     var up = 1
     var down = 1
-    
+
     for i in 1..<nums.count {
         if nums[i-1] < nums[i] {
             up = max(up, down+1)
@@ -86,6 +85,6 @@ func wiggleMaxLength1(_ nums: [Int]) -> Int {
             down = max(up+1, down)
         }
     }
-    
+
     return max(up, down)
 }

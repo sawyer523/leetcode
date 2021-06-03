@@ -63,39 +63,39 @@ func minimumEffortPath(_ heights: [[Int]]) -> Int {
         let m = heights[0].count
         var parent = [Int](0..<m*n)
         var size = [Int](repeating: 1, count: m*n)
-        
+
         func find(_ x: Int) -> Int {
             if parent[x] != x {
                 parent[x] = find(parent[x])
             }
             return parent[x]
         }
-        
+
         func union(_ x: Int, _ y: Int) {
             var fx = find(x)
             var fy = find(y)
             if fx  == fy {
                 return
             }
-            
+
             if size[fx] < size[fy] {
                 (fx, fy) = (fy, fx)
             }
-            
+
             size[fx] += size[fy]
             parent[fy] = fx
         }
-        
+
         func isSameSet(_ x: Int, _ y: Int) -> Bool {
             return find(x) == find(y)
         }
-        
+
         struct edge {
             var v: Int
             var w: Int
             var diff: Int
         }
-        
+
         var edges = [edge]()
         for (i, row) in heights.enumerated() {
             for (j, h) in row.enumerated() {
@@ -103,23 +103,23 @@ func minimumEffortPath(_ heights: [[Int]]) -> Int {
                 if 0 < i {
                     edges.append(edge(v: id - m, w: id, diff: abs(h - heights[i-1][j])))
                 }
-                
+
                 if 0 < j {
                     edges.append(edge(v: id - 1, w: id, diff: abs(h - heights[i][j-1])))
                 }
             }
         }
-        
+
         edges.sort { (e1, e2) -> Bool in
             return e1.diff < e2.diff
         }
-        
+
         for e in edges {
             union(e.v, e.w)
             if isSameSet(0, n*m-1) {
                 return e.diff
             }
         }
-        
+
         return 0
 }

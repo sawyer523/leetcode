@@ -58,7 +58,7 @@ import Foundation
 func carFleet(_ target: Int, _ position: [Int], _ speed: [Int]) -> Int {
     // (位置, 到达终点时间)
     let n = position.count
-    var cars: [(Int, Float)] = (0..<n).map({(position[$0],Float((target - position[$0])) / Float(speed[$0]))})
+    var cars: [(Int, Float)] = (0..<n).map({(position[$0], Float((target - position[$0])) / Float(speed[$0]))})
     cars.sort { a, b in
         return a.0 < b.0
     }
@@ -72,6 +72,6 @@ func carFleet(_ target: Int, _ position: [Int], _ speed: [Int]) -> Int {
             cur = cars[i].1
         }
     }
-    
+
     return res
 }

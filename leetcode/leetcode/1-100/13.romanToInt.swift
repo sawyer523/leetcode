@@ -86,12 +86,12 @@ func romanToInt(_ s: String) -> Int {
     let sArray = Array(s)
            var pre = getNum(sArray[0])
            var result = 0
-           
+
            for i in 1..<sArray.count {
                let temp = getNum(sArray[i])
-               if pre < temp {//前面一位 < 后面一位，减
+               if pre < temp {// 前面一位 < 后面一位，减
                    result -= pre
-               } else { //前面一位 > 后面一位， 加
+               } else { // 前面一位 > 后面一位， 加
                    result += pre
                }
                pre = temp

@@ -58,34 +58,34 @@ func numSimilarGroups(_ strs: [String]) -> Int {
     var parents = [Int](0..<n)
     var size = [Int](repeating: 1, count: n)
     var setCount = n
-    
+
     func find(_ x: Int) -> Int {
         if parents[x] != x {
             parents[x] = find(parents[x])
         }
         return parents[x]
     }
-    
+
     func union(_ x: Int, _ y: Int) {
         var fx = find(x)
         var fy = find(y)
         if fx == fy {
             return
         }
-        
+
         if size[fx] < size[fy] {
             (fx, fy) = (fy, fx)
         }
-        
+
         size[fx] += size[fy]
         parents[fy] = fx
         setCount -= 1
     }
-    
+
     func inSameSet(_ x: Int, _ y: Int) -> Bool {
         return find(x) == find(y)
     }
-    
+
     func isSimilar(_ s: String, _ t: String) -> Bool {
         var diff = 0
         let arrT = Array(t)
@@ -99,7 +99,7 @@ func numSimilarGroups(_ strs: [String]) -> Int {
         }
         return true
     }
-    
+
     for (i, v1) in strs.enumerated() {
         for j in i+1..<n {
             if !inSameSet(i, j) &&
@@ -108,6 +108,6 @@ func numSimilarGroups(_ strs: [String]) -> Int {
             }
         }
     }
-    
+
     return setCount
 }

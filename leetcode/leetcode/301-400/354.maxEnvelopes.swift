@@ -33,16 +33,15 @@ import Foundation
  
  */
 
-
 func maxEnvelopes(_ envelopes: [[Int]]) -> Int {
     if envelopes.isEmpty {
         return 0
     }
-    
+
     let env = envelopes.sorted { a, b in
         return a[0] < b[0] || a[0] == b[0] && b[1] < a[1]
     }
-    
+
     var dp = [Int](repeating: 0, count: env.count)
     var res = 0
     for e in env {
@@ -61,6 +60,6 @@ func maxEnvelopes(_ envelopes: [[Int]]) -> Int {
             res += 1
         }
     }
-    
+
     return res
 }

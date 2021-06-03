@@ -56,7 +56,7 @@ func flipAndInvertImage(_ A: [[Int]]) -> [[Int]] {
             left += 1
             right -= 1
         }
-        
+
         if left == right {
             restul[i][left] ^= 1
         }

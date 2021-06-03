@@ -61,7 +61,6 @@ import Foundation
  
  */
 
-
 func rotate(_ matrix: inout [[Int]]) {
     let a = matrix
     for i in 0..<a.count {
@@ -90,7 +89,7 @@ func rotate2(_ matrix: inout [[Int]]) {
     for i in 0 ..< n/2 {
         matrix.swapAt(i, n-i-1)
     }
-    
+
     var temp = 0
     for i in 0..<n {
         for j in 0..<i {

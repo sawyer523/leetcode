@@ -51,7 +51,7 @@ func rob1(_ nums: [Int]) -> Int {
     if nums.count <= 2 {
         return nums.max() ?? 0
     }
-    
+
     func rob(_ nums: [Int]) -> Int {
         var prev = 0
         var curr = 0
@@ -60,7 +60,6 @@ func rob1(_ nums: [Int]) -> Int {
         }
         return max(prev, curr)
     }
-    
-    
+
     return max(rob(Array(nums.dropLast())), rob(Array(nums.dropFirst())))
 }

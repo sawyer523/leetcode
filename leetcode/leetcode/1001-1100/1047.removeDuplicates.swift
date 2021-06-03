@@ -46,7 +46,7 @@ func removeDuplicates(_ S: String) -> String {
         } else {
             if arr.last! == char {
                 _=arr.popLast()
-            } else  {
+            } else {
                 arr.append(char)
             }
         }

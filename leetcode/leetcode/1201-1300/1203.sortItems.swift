@@ -62,7 +62,7 @@ func sortItems(_ n: Int, _ m: Int, _ group: [Int], _ beforeItems: [[Int]]) -> [I
                     q.append(i)
                 }
             }
-            
+
             var ans: [Int] = []
             while 0 < q.count {
                 let from = q.first!
@@ -75,10 +75,10 @@ func sortItems(_ n: Int, _ m: Int, _ group: [Int], _ beforeItems: [[Int]]) -> [I
                     }
                 }
             }
-            
+
             return ans
         }
-        
+
         var group = group
         var groupItems: [[Int]] = [[Int]](repeating: [], count: m+n)
         for i in 0..<group.count {
@@ -87,7 +87,7 @@ func sortItems(_ n: Int, _ m: Int, _ group: [Int], _ beforeItems: [[Int]]) -> [I
             }
             groupItems[group[i]].append(i)
         }
-        
+
         var groupGraph = [[Int]](repeating: [], count: m+n)
         var groupDegree = [Int](repeating: 0, count: m+n)
         var itemGraph = [[Int]](repeating: [], count: n)
@@ -105,17 +105,17 @@ func sortItems(_ n: Int, _ m: Int, _ group: [Int], _ beforeItems: [[Int]]) -> [I
                 }
             }
         }
-        
+
         var items = [Int](0..<m+n)
         for i in 0..<m+n {
             items[i] = i
         }
-        
+
         let groupOrders = topSort(groupGraph, &groupDegree, items)
         if groupOrders.count < items.count {
             return []
         }
-        
+
         var ans: [Int] = []
         for groupID in groupOrders {
             let items = groupItems[groupID]

@@ -49,7 +49,7 @@ func transpose(_ matrix: [[Int]]) -> [[Int]] {
     let row = matrix.count
     let column = matrix[0].count
     var ans = [[Int]](repeating: [Int](repeating: -1, count: row), count: column)
-    
+
     for (i, row) in matrix.enumerated() {
         for (j, v) in row.enumerated() {
             ans[j][i] = v

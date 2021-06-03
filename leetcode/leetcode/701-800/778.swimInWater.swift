@@ -60,33 +60,33 @@ func swimInWater(_ grid: [[Int]]) -> Int {
         let n = grid.count
         var parent = [Int](0..<n*n)
         var size = [Int](repeating: 1, count: n*n)
-        
+
         func find(_ x: Int) -> Int {
             if parent[x] != x {
                 parent[x] = find(parent[x])
             }
             return parent[x]
         }
-        
+
         func union(_ x: Int, _ y: Int) {
             var fx = find(x)
             var fy = find(y)
             if fx == fy {
                 return
             }
-            
+
             if size[fx] < size[fy] {
                 (fx, fy) = (fy, fx)
             }
-            
+
             size[fx] += size[fy]
             parent[fy] = fx
         }
-        
+
         func inSameSet(_ x: Int, _ y: Int) -> Bool {
             return find(x) == find(y)
         }
-        
+
         let dirs: [(Int, Int)] = [(-1, 0), (1, 0), (0, -1), (0, 1)]
         var pos = [(Int, Int)](repeating: (0, 0), count: n*n)
         for (i, row) in grid.enumerated() {
@@ -94,7 +94,7 @@ func swimInWater(_ grid: [[Int]]) -> Int {
                 pos[h] = (i, j)
             }
         }
-        
+
         var threshold = 0
         while 0 <= threshold {
             let p = pos[threshold]
@@ -110,6 +110,6 @@ func swimInWater(_ grid: [[Int]]) -> Int {
             }
             threshold += 1
         }
-        
+
         return 0
 }

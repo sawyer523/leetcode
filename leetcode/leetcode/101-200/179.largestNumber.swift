@@ -54,22 +54,22 @@ func largestNumber(_ nums: [Int]) -> String {
         while x1 <= x {
             x1 *= 10
         }
-        
+
         while x2 <= y {
             x2 *= 10
         }
-        
+
         return x1*y + x < x2*x + y
     }
-    
+
     if nums.first == 0 {
         return "0"
     }
-    
+
     var ans: [String] = []
     for num in nums {
         ans.append(String(num))
     }
-    
+
     return ans.joined()
 }

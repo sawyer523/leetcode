@@ -88,18 +88,18 @@ func findTheDistanceValue(_ arr1: [Int], _ arr2: [Int], _ d: Int) -> Int {
     }
     return ans
     */
-    
+
     // 二分
-    
+
     let sortArr = arr2.sorted()
-    
+
     func binarySearch(_ target: Int) -> Int {
         var left = 0
         var right = sortArr.count - 1
         if sortArr.last! < target {
             return right + 1
         }
-        
+
         while left < right {
             let mid = left + (right - left) / 2
             if sortArr[mid] < target {
@@ -110,7 +110,7 @@ func findTheDistanceValue(_ arr1: [Int], _ arr2: [Int], _ d: Int) -> Int {
         }
         return left
     }
-    
+
     var ans = 0
     for i in arr1 {
         let p = binarySearch(i)
@@ -118,11 +118,11 @@ func findTheDistanceValue(_ arr1: [Int], _ arr2: [Int], _ d: Int) -> Int {
         if p < sortArr.count {
             ok &= sortArr[p] - i > d ? 1 : 0
         }
-        
+
         if 0 <= p - 1 && p - 1 <= sortArr.count {
             ok &= i - sortArr[p - 1] > d ? 1 : 0
         }
-        
+
         ans += ok
     }
     return ans

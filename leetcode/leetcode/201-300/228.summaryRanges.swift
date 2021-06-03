@@ -84,6 +84,6 @@ func summaryRanges(_ nums: [Int]) -> [String] {
             }
             ans.append(s)
         }
-        
+
         return ans
 }

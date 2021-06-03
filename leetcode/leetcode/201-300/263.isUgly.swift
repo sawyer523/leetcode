@@ -55,6 +55,6 @@ func isUgly(_ num: Int) -> Bool {
             num /= i
         }
     }
-    
+
     return num == 1 ? true : false
 }

@@ -56,7 +56,7 @@ func isPalindrome(_ x: Int) -> Bool {
     if x < 0 {
         return false
     }
-    
+
     var res = 0
     var tmp = x
     while 0 < tmp {

@@ -77,7 +77,7 @@ func minDays(_ bloomDay: [Int], _ m: Int, _ k: Int) -> Int {
     if m * k > bloomDay.count {
         return -1
     }
-    
+
     func getCount(_ day: Int) -> Int {
         var ans = 0
         var count = 0
@@ -87,7 +87,7 @@ func minDays(_ bloomDay: [Int], _ m: Int, _ k: Int) -> Int {
             } else {
                 count = 0
             }
-            
+
             if count == k {
                 ans += 1
                 count = 0
@@ -95,10 +95,10 @@ func minDays(_ bloomDay: [Int], _ m: Int, _ k: Int) -> Int {
         }
         return ans
     }
-    
+
     var max = bloomDay.max()!
     var min = bloomDay.min()!
-    
+
     while min < max {
         let mid = min + (max - min) / 2
         let count = getCount(mid)
@@ -108,6 +108,6 @@ func minDays(_ bloomDay: [Int], _ m: Int, _ k: Int) -> Int {
             min = mid + 1
         }
     }
-    
+
     return min
 }

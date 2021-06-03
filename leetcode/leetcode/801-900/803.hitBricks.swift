@@ -79,19 +79,19 @@ import Foundation
  所有 (xi, yi) 互不相同
  */
 
-//func hitBricks(_ grid: [[Int]], _ hits: [[Int]]) -> [Int] {
+// func hitBricks(_ grid: [[Int]], _ hits: [[Int]]) -> [Int] {
 //
 //    }
 class Solution803 {
     private var rows: Int = 0
     private var cols: Int = 0
-    
+
     let DIRECTIONS = [[0, 1], [1, 0], [-1, 0], [0, -1]]
 
     func hitBricks(_ grid: [[Int]], _ hits: [[Int]]) -> [Int] {
         rows = grid.count
         cols = grid[0].count
-        
+
         /// 1.将grid中的hits的砖头全部击碎
         var copy = Array.init(repeating: Array.init(repeating: 0, count: cols), count: rows)
         for i in 0..<rows {
@@ -99,22 +99,22 @@ class Solution803 {
                 copy[i][j] = grid[i][j]
             }
         }
-        
+
         for hit in hits {
             copy[hit[0]][hit[1]] = 0
         }
-        
+
         /// 2.建图
         let size = rows * cols
         let unionFind = UnionFind(size + 1)
-        
+
         /// 2.1 将第0行与屋顶相连
         for j in 0..<cols {
             if copy[0][j] == 1 {
                 unionFind.union(x: j, y: size)
             }
         }
-        
+
         /// 2.2 其他网格
         for i in 1..<rows {
             for j in 0..<cols {
@@ -122,14 +122,14 @@ class Solution803 {
                     if copy[i - 1][j] == 1 {
                         unionFind.union(x: getIndex(x: i - 1, y: j), y: getIndex(x: i, y: j))
                     }
-                    
+
                     if j > 0 && copy[i][j - 1] == 1 {
                         unionFind.union(x: getIndex(x: i, y: j - 1), y: getIndex(x: i, y: j))
                     }
                 }
             }
         }
-        
+
         /// 3.按照hits逆序补回砖块，并记录每一次补回石块与屋顶砖块的增量
         let hitsLen = hits.count
         var result = Array.init(repeating: 0, count: hitsLen)
@@ -141,31 +141,31 @@ class Solution803 {
             if grid[x][y] == 0 {
                 continue
             }
-            
+
             // 补回之前与屋顶相连的砖块数
             let origin = unionFind.getSize(x: size)
-            
+
             // 如果补回的是第0行，需先与屋顶合并
             if x == 0 {
                 // unionFind.union(x: getIndex(x: x, y: y), y: size)
                 unionFind.union(x: y, y: size)
             }
-            
+
             // 4个方向上对比合并
             for item in DIRECTIONS {
                 let newX = x + item[0]
                 let newY = y + item[1]
-                
+
                 if inArea(x: newX, y: newY) && copy[newX][newY] == 1 {
                     unionFind.union(x: getIndex(x: newX, y: newY), y: getIndex(x: x, y: y))
                 }
             }
-            
+
             // 补回之后与屋顶相连的砖块数
             let current = unionFind.getSize(x: size)
             // 可能没有变化所以与0做对比
             result[i] = max(0, current - origin - 1)
-            
+
             // 补回砖块
             copy[x][y] = 1
         }
@@ -180,14 +180,14 @@ class Solution803 {
     private func getIndex(x: Int, y: Int) -> Int {
         return x * cols + y
     }
-    
+
     class UnionFind {
         /// 当前结点的父结点
         private var parent: [Int]
         /// 以当前结点为根结点的子树的结点总数
         private var size: [Int]
-        
-        init(_ count:Int) {
+
+        init(_ count: Int) {
             parent = Array.init(repeating: 0, count: count)
             size = Array.init(repeating: 0, count: count)
             for i in 0..<count {
@@ -220,6 +220,3 @@ class Solution803 {
         }
     }
 }
-
-
-

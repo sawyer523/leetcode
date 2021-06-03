@@ -89,7 +89,7 @@ func removeDuplicates(_ nums: inout [Int]) -> Int {
     if nums.count <= n {
         return nums.count
     }
-    
+
     var index = n
     for i in n..<nums.count {
         if nums[index-n] != nums[i] {
@@ -97,6 +97,6 @@ func removeDuplicates(_ nums: inout [Int]) -> Int {
             index += 1
         }
     }
-    
+
     return index
 }

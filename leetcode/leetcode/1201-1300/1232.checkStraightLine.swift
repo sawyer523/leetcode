@@ -49,13 +49,12 @@ import Foundation
 func checkStraightLine(_ coordinates: [[Int]]) -> Bool {
         let (deltaX, deltaY) = (coordinates[0][0], coordinates[0][1])
         var coordinates1 = coordinates
-        
+
         for (i, v) in coordinates.enumerated() {
             coordinates1[i][0] = v[0] - deltaX
             coordinates1[i][1] = v[1] - deltaY
         }
-        
-        
+
         let (A, B) = (coordinates1[1][1], -coordinates1[1][0])
         for i in 2..<coordinates1.count {
             let (x, y) = (coordinates1[i][0], coordinates1[i][1])
@@ -63,6 +62,6 @@ func checkStraightLine(_ coordinates: [[Int]]) -> Bool {
                 return false
             }
         }
-        
+
         return true
 }

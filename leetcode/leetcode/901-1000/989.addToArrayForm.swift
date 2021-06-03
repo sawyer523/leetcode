@@ -66,6 +66,6 @@ func addToArrayForm(_ A: [Int], _ K: Int) -> [Int] {
         k /= 10
         i -= 1
     }
-    
+
     return ans.reversed()
 }

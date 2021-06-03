@@ -50,7 +50,7 @@ func candy(_ ratings: [Int]) -> Int {
 
     var left = [Int](repeating: 1, count: ratings.count)
     var right = [Int](repeating: 1, count: ratings.count)
-    
+
     for i in 1..<ratings.count {
         if ratings[i - 1] < ratings[i] {
             left[i] = left[i-1] + 1
@@ -64,7 +64,7 @@ func candy(_ ratings: [Int]) -> Int {
         }
         ans += max(left[i], right[i])
     }
-    
+
     return ans
 }
-//1,2,3,
+// 1,2,3,

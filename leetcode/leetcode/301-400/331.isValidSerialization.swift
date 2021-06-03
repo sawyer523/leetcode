@@ -49,7 +49,6 @@ import Foundation
  输出: false
  */
 
-
 func isValidSerialization(_ preorder: String) -> Bool {
     let arr = preorder.split(separator: ",")
     var slots = 1
@@ -63,6 +62,6 @@ func isValidSerialization(_ preorder: String) -> Bool {
             slots += 1
         }
     }
-    
+
     return slots == 0
 }

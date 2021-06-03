@@ -60,7 +60,7 @@ func minKBitFlips(_ A: [Int], _ K: Int) -> Int {
             revCnt ^= 1
             tmp[i-K] -= 2
         }
-        
+
         if v == revCnt {
             if n < i+K {
                 return -1
@@ -70,6 +70,6 @@ func minKBitFlips(_ A: [Int], _ K: Int) -> Int {
             tmp[i] += 2
         }
     }
-    
+
     return ans
 }
