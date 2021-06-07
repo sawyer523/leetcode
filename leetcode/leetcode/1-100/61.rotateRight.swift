@@ -41,15 +41,7 @@ import Foundation
  0 <= k <= 2 * 109
  */
 
-private class ListNode {
-     public var val: Int
-     public var next: ListNode?
-     public init() { self.val = 0; self.next = nil; }
-     public init(_ val: Int) { self.val = val; self.next = nil; }
-     public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
-}
-
-private func rotateRight(_ head: ListNode?, _ k: Int) -> ListNode? {
+func rotateRight(_ head: ListNode?, _ k: Int) -> ListNode? {
     if k == 0 || head == nil || head?.next == nil {
         return head
     }

@@ -7,5 +7,5 @@
 
 import Foundation
 
-print(checkSubarraySum([23, 2, 6, 4, 7],
-                       13))
+print(findTargetSumWays([1,1,1,1,1],
+                        3))
