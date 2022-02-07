@@ -7,5 +7,6 @@
 
 import Foundation
 
-print(findTargetSumWays([1,1,1,1,1],
-                        3))
+
+print(longestDiverseString(1, 1, 7))
+

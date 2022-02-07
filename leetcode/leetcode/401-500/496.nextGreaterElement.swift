@@ -63,9 +63,7 @@ func nextGreaterElement(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
         }
         queue.append(v)
     }
-//    while !queue.isEmpty {
-//        dict[queue.popLast()!] = -1
-//    }
+
     var ans =  [Int](repeating: -1, count: nums1.count)
     for i in 0..<nums1.count {
         if let v = dict[nums1[i]] {

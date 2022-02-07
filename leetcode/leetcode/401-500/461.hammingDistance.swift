@@ -40,7 +40,7 @@ import Foundation
  */
 
 func hammingDistance(_ x: Int, _ y: Int) -> Int {
-    var sum = 0
+//    var sum = 0
 //    var x = x
 //    var y = y
 //    while x != 0 || y != 0 {

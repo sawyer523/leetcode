@@ -72,16 +72,16 @@ private class Trie {
         root = TrieNode(c: " ")
         ws = root
     }
-
+    
     /** Inserts a word into the trie. */
     func insert(_ word: String) {
         ws = root
         for c in word {
-           var temp = ws.children[c]
-           if temp == nil {
-            temp = TrieNode(c: c)
-            ws.children[c] = temp
-            ws = temp!
+            var temp = ws.children[c]
+            if temp == nil {
+                temp = TrieNode(c: c)
+                ws.children[c] = temp
+                ws = temp!
             }
             ws = temp!
         }
