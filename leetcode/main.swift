@@ -8,5 +8,7 @@
 import Foundation
 
 
-print(longestDiverseString(1, 1, 7))
+print(gridIllumination(5,
+                       [[0,0],[4,4]],
+                       [[1,1],[1,0]]))
 

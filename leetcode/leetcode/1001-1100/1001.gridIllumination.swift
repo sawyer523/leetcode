@@ -61,5 +61,64 @@ import Foundation
  */
 
 func gridIllumination(_ n: Int, _ lamps: [[Int]], _ queries: [[Int]]) -> [Int] {
+    struct pair: Hashable {
+        var x: Int
+        var y: Int
+    }
     
+    var points: [pair: Bool] = [:]
+    var row: [Int: Int] = [:]
+    var col: [Int: Int] = [:]
+    var diagonal: [Int: Int] = [:]
+    var antiDiagonal: [Int: Int] = [:]
+    
+    for lamp in lamps {
+        let r = lamp[0]
+        let c = lamp[1]
+        let p = pair(x: r, y: c)
+        if points[p] != nil {
+            continue
+        }
+        
+        points[p] = true
+        row[r, default: 0] += 1
+        col[c, default: 0] += 1
+        diagonal[r-c, default: 0] += 1
+        antiDiagonal[r+c, default: 0] += 1
+        
+    }
+    
+    var ans = [Int](repeating: 0, count: queries.count)
+    for i in queries.indices {
+        let r = queries[i][0]
+        let c = queries[i][1]
+        
+        if 0 < row[r, default: 0] ||
+            0 < col[c, default: 0] ||
+            0 < diagonal[r-c, default: 0] ||
+            0 < antiDiagonal[r+c, default: 0] {
+            ans[i] = 1
+        }
+        
+        for x in r-1 ... r+1 {
+            for y in c-1...c+1 {
+                let p = pair(x: x, y: y)
+                if x < 0 ||
+                    y < 0 ||
+                    n <= x ||
+                    n <= y ||
+                    points[p] == nil {
+                    continue
+                }
+                
+                points.removeValue(forKey: p)
+                row[x, default: 0] -= 1
+                col[y, default: 0] -= 1
+                diagonal[x-y, default: 0] -= 1
+                antiDiagonal[x+y, default: 0] -= 1
+            }
+        }
+    }
+    
+    return ans
 }
