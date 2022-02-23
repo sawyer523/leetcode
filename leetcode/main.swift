@@ -8,7 +8,5 @@
 import Foundation
 
 
-print(gridIllumination(5,
-                       [[0,0],[4,4]],
-                       [[1,1],[1,0]]))
+print(numberOfGoodSubsets([1,2,3,4]))
 
