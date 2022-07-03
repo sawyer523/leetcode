@@ -68,5 +68,85 @@
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F058893-1D77-4CD3-BFD9-98BEA1900147"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "leetcode/leetcode/2001-2100/2049.countHighestScoreNodes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "countHighestScoreNodes(_:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "4F058893-1D77-4CD3-BFD9-98BEA1900147 - 72a3b6660a5d0bdf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "leetcode.countHighestScoreNodes(Swift.Array&lt;Swift.Int&gt;) -&gt; Swift.Int"
+                  moduleName = "leetcode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cxn/Library/Mobile%20Documents/com~apple~CloudDocs/learn/leetcode/leetcode/leetcode/2001-2100/2049.countHighestScoreNodes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "1165">
+               </Location>
+               <Location
+                  uuid = "4F058893-1D77-4CD3-BFD9-98BEA1900147 - a046e2ce61cd2412"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dfs(Swift.Int) -&gt; Swift.Int"
+                  moduleName = "leetcode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cxn/Library/Mobile%20Documents/com~apple~CloudDocs/learn/leetcode/leetcode/leetcode/2001-2100/2049.countHighestScoreNodes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "270">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0D77A0DD-6109-4490-B853-A216D4FA94EA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "leetcode/leetcode/601-700/682.calPoints.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "calPoints(_:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E531A2AC-69BB-4362-AEB3-382E1C429E72"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "leetcode/leetcode/801-900/806.numberOfLines.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "numberOfLines(_:_:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

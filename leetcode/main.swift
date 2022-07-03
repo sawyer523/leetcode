@@ -7,6 +7,4 @@
 
 import Foundation
 
-
-print(numberOfGoodSubsets([1,2,3,4]))
-
+print(minRefuelStops(100,50,[[25,25],[50,50]]))

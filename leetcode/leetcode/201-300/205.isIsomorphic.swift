@@ -68,10 +68,3 @@ class Solution205 {
         return true
     }
 }
-
-extension String {
-    subscript(_ i: Int) -> Character {
-        let index = self.index(self.startIndex, offsetBy: i)
-        return self[index]
-    }
-}

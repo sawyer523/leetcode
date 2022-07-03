@@ -35,7 +35,7 @@ import Foundation
 
  提示：
 
- 1 <= n <= 231 - 1
+ 1 <= n <= 2^31 - 1
  */
 
 func nextGreaterElement(_ n: Int) -> Int {
