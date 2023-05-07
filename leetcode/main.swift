@@ -7,4 +7,4 @@
 
 import Foundation
 
-print(minRefuelStops(100,50,[[25,25],[50,50]]))
+print(isValid3("aabcbc"))

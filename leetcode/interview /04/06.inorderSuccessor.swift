@@ -14,10 +14,6 @@ import Foundation
 
  106
 
-
-
-
-
  设计一个算法，找出二叉搜索树中指定节点的“下一个”节点（也即中序后继）。
 
  如果指定节点没有对应的“下一个”节点，则返回null。
@@ -55,7 +51,7 @@ func inorderSuccessor(_ root: TreeNode?, _ p: TreeNode?) -> TreeNode? {
         }
         return successor
     }
-    
+
     var node = root
     while node != nil {
         if p?.val ?? 0 < node?.val ?? 0 {
@@ -65,6 +61,6 @@ func inorderSuccessor(_ root: TreeNode?, _ p: TreeNode?) -> TreeNode? {
             node = node?.right
         }
     }
-    
+
     return successor
 }

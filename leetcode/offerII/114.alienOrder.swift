@@ -14,10 +14,6 @@ import Foundation
 
  39
 
-
-
-
-
  现有一种使用英语字母的外星文语言，这门语言的字母顺序与英语顺序不同。
 
  给定一个字符串列表 words ，作为这门语言的词典，words 中的字符串已经 按这门新语言的字母顺序进行了排序 。
@@ -28,7 +24,6 @@ import Foundation
 
  在第一个不同字母处，如果 s 中的字母在这门外星语言的字母顺序中位于 t 中字母之前，那么 s 的字典顺序小于 t 。
  如果前面 min(s.length, t.length) 字母都相同，那么 s.length < t.length 时，s 的字典顺序也小于 t 。
-  
 
  示例 1：
 
@@ -43,7 +38,6 @@ import Foundation
  输入：words = ["z","x","z"]
  输出：""
  解释：不存在合法字母顺序，因此返回 "" 。
-  
 
  提示：
 
@@ -58,31 +52,31 @@ func alienOrder(_ words: [String]) -> String {
         g[c] = []
     }
 next:
-    for i in 1..<words.count {
-        let s = words[i-1]
+        for i in 1 ..< words.count {
+        let s = words[i - 1]
         let t = words[i]
         for c in t {
             g[c] = g[c, default: []]
         }
-        
+
         for (u, v) in zip(s, t) {
             if u != v {
                 g[u, default: []].append(v)
                 continue next
             }
         }
-        
+
         if t.count < s.count {
             return ""
         }
     }
-    
+
     let visiting = 1
     let visited = 2
     var i = g.count - 1
     var state: [Character: Int] = [:]
     var order = [Character](repeating: " ", count: g.count)
-    
+
     func dfs(_ u: Character) -> Bool {
         state[u] = visiting
         for v in g[u]! {
@@ -94,13 +88,13 @@ next:
                 }
             }
         }
-        
+
         order[i] = u
         i -= 1
         state[u] = visited
         return true
     }
-    
+
     for k in g.keys {
         if state[k, default: 0] == 0 && !dfs(k) {
             return ""

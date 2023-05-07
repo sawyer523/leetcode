@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - BNode
+
 public class BNode {
     public var val: Int
     public var next: BNode?
@@ -15,11 +17,13 @@ public class BNode {
     public var prev: BNode?
     public init(_ val: Int) {
         self.val = val
-        self.next = nil
-        self.random = nil
-        self.child = nil
+        next = nil
+        random = nil
+        child = nil
     }
 }
+
+// MARK: Equatable
 
 extension BNode: Equatable {
     public static func == (_ lhs: BNode, _ rhs: BNode) -> Bool {
@@ -27,13 +31,15 @@ extension BNode: Equatable {
     }
 }
 
+// MARK: Hashable
+
 extension BNode: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(val)
     }
 }
 
-
+// MARK: - Node
 
 public class Node {
     public var val: Int
@@ -41,10 +47,11 @@ public class Node {
     public var children: [Node]
     public init(_ val: Int) {
         self.val = val
-        self.children = []
-        
+        children = []
     }
 }
+
+// MARK: Equatable
 
 extension Node: Equatable {
     public static func == (lhs: Node, rhs: Node) -> Bool {
@@ -52,12 +59,15 @@ extension Node: Equatable {
     }
 }
 
+// MARK: Hashable
+
 extension Node: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(val)
     }
 }
 
+// MARK: - Node2
 
 public class Node2 {
     public var val: Bool
@@ -69,11 +79,12 @@ public class Node2 {
     public init(_ val: Bool, _ isLeaf: Bool) {
         self.val = val
         self.isLeaf = isLeaf
-        self.topLeft = nil
-        self.topRight = nil
-        self.bottomLeft = nil
-        self.bottomRight = nil
+        topLeft = nil
+        topRight = nil
+        bottomLeft = nil
+        bottomRight = nil
     }
+
     public init(_ val: Bool, _ isLeaf: Bool, _ topLeft: Node2?, _ topRight: Node2?, _ bottomLeft: Node2?, _ bottomRight: Node2?) {
         self.val = val
         self.isLeaf = isLeaf

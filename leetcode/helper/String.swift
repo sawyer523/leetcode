@@ -9,7 +9,7 @@ import Foundation
 
 extension String {
     subscript(_ i: Int) -> Character {
-        let index = self.index(self.startIndex, offsetBy: i)
+        let index = self.index(startIndex, offsetBy: i)
         return self[index]
     }
 }

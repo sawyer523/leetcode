@@ -1,0 +1,123 @@
+//
+//  1971.validPath.swift
+//  leetcode
+//
+//  Created by Xiaonan Chen on 2022/12/19.
+//
+
+import Foundation
+
+/*
+ 1971. 寻找图中是否存在路径
+ 难度
+ 简单
+
+ 58
+
+ 有一个具有 n 个顶点的 双向 图，其中每个顶点标记从 0 到 n - 1（包含 0 和 n - 1）。图中的边用一个二维整数数组 edges 表示，其中 edges[i] = [ui, vi] 表示顶点 ui 和顶点 vi 之间的双向边。 每个顶点对由 最多一条 边连接，并且没有顶点存在与自身相连的边。
+
+ 请你确定是否存在从顶点 source 开始，到顶点 destination 结束的 有效路径 。
+
+ 给你数组 edges 和整数 n、source 和 destination，如果从 source 到 destination 存在 有效路径 ，则返回 true，否则返回 false 。
+
+ 示例 1：
+
+ 输入：n = 3, edges = [[0,1],[1,2],[2,0]], source = 0, destination = 2
+ 输出：true
+ 解释：存在由顶点 0 到顶点 2 的路径:
+ - 0 → 1 → 2
+ - 0 → 2
+ 示例 2：
+
+ 输入：n = 6, edges = [[0,1],[0,2],[3,5],[5,4],[4,3]], source = 0, destination = 5
+ 输出：false
+ 解释：不存在由顶点 0 到顶点 5 的路径.
+
+ 提示：
+
+ 1 <= n <= 2 * 10^5
+ 0 <= edges.length <= 2 * 10^5
+ edges[i].length == 2
+ 0 <= ui, vi <= n - 1
+ ui != vi
+ 0 <= source, destination <= n - 1
+ 不存在重复边
+ 不存在指向顶点自身的边
+ */
+
+func validPath(_ n: Int, _ edges: [[Int]], _ source: Int, _ destination: Int) -> Bool {
+    /*
+     class UnionFind {
+         private var parent: [Int]
+         private var rank: [Int]
+         init(_ n: Int) {
+             rank = [Int](repeating: 0, count: n)
+             parent = [Int](0..<n)
+         }
+
+         func find(_ x: Int) -> Int {
+             if parent[x] != x {
+                 parent[x] = find(parent[x])
+             }
+             return parent[x]
+         }
+
+         func union(_ x: Int, _ y: Int) {
+             let dx = find(x)
+             let dy = find(y)
+             if dx != dy {
+                 if rank[dy] < rank[dx] {
+                     parent[dy] = dx
+                 } else if rank[dx] < rank[dy] {
+                     parent[dx] = dy
+                 } else {
+                     parent[dy] = dx
+                     rank[dx] += 1
+                 }
+             }
+         }
+
+         func connect(_ x: Int, _ y: Int) -> Bool {
+             return find(x) == find(y)
+         }
+     }
+
+     if source == destination {
+         return true
+     }
+
+     let uf = UnionFind(n)
+     for edge in edges {
+         uf.union(edge[0], edge[1])
+     }
+     return uf.connect(source, destination)
+      */
+
+    var list = [[Int]](repeating: [], count: n)
+    for edge in edges {
+        let x = edge[0]
+        let y = edge[1]
+        list[x].append(y)
+        list[y].append(x)
+    }
+
+    var visited = [Bool](repeating: false, count: n)
+    visited[source] = true
+    var q = [source]
+    var i = 0
+    while i < q.count {
+        let vertex = q[i]
+        if vertex == destination {
+            break
+        }
+        for next in list[vertex] {
+            if !visited[next] {
+                q.append(next)
+                visited[next] = true
+            }
+        }
+        i += 1
+    }
+
+    return visited[destination]
+}

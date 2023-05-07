@@ -14,13 +14,7 @@ import Foundation
 
  144
 
-
-
-
-
  字符串有三种编辑操作:插入一个字符、删除一个字符或者替换一个字符。 给定两个字符串，编写一个函数判定它们是否只需要一次(或者零次)编辑。
-
-  
 
  示例 1:
 
@@ -28,7 +22,6 @@ import Foundation
  first = "pale"
  second = "ple"
  输出: True
-  
 
  示例 2:
 
@@ -41,23 +34,23 @@ import Foundation
 func oneEditAway(_ first: String, _ second: String) -> Bool {
     let m = first.count
     let n = second.count
-    
+
     if m < n {
         return oneEditAway(second, first)
     }
-    
-    if 1 < m - n {
+
+    if m - n > 1 {
         return false
     }
-    
+
     for (i, ch) in second.enumerated() {
         if first[first.index(first.startIndex, offsetBy: i)] != ch {
             if m == n {
-                return first[first.index(first.startIndex, offsetBy: i+1)..<first.endIndex] == second[second.index(second.startIndex, offsetBy: i+1)..<second.endIndex]
+                return first[first.index(first.startIndex, offsetBy: i + 1) ..< first.endIndex] == second[second.index(second.startIndex, offsetBy: i + 1) ..< second.endIndex]
             }
-            return first[first.index(first.startIndex, offsetBy: i+1)..<first.endIndex] == second[first.index(second.startIndex, offsetBy: i)..<second.endIndex]
+            return first[first.index(first.startIndex, offsetBy: i + 1) ..< first.endIndex] == second[first.index(second.startIndex, offsetBy: i) ..< second.endIndex]
         }
     }
-    
+
     return true
 }

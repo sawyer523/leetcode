@@ -14,10 +14,6 @@ import Foundation
 
  34
 
-
-
-
-
  小扣在秋日市集选择了一家早餐摊位，一维整型数组 staple 中记录了每种主食的价格，一维整型数组 drinks 中记录了每种饮料的价格。小扣的计划选择一份主食和一款饮料，且花费不超过 x 元。请返回小扣共有多少种购买方案。
 
  注意：答案需要以 1e9 + 7 (1000000007) 为底取模，如：计算初始结果为：1000000008，请返回 1
@@ -63,7 +59,7 @@ import Foundation
 func breakfastNumber(_ staple: [Int], _ drinks: [Int], _ x: Int) -> Int {
     func binarySearch(arr: [Int], target: Int) -> Int {
         var left = 0
-        var right = arr.count-1
+        var right = arr.count - 1
         while left <= right {
             let mid = left + (right - left) / 2
             if arr[mid] > target {
@@ -78,7 +74,7 @@ func breakfastNumber(_ staple: [Int], _ drinks: [Int], _ x: Int) -> Int {
     let staple = staple.sorted()
     let drinks = drinks.sorted()
     var ans = 0
-    for i in 0..<staple.count {
+    for i in 0 ..< staple.count {
         let temp = x - staple[i]
         let idx = binarySearch(arr: drinks, target: temp)
         if idx == 0 {
@@ -87,11 +83,10 @@ func breakfastNumber(_ staple: [Int], _ drinks: [Int], _ x: Int) -> Int {
         ans += idx
     }
 
-    return ans % 1000000007
+    return ans % 1_000_000_007
 }
 
 func breakfastNumber1(_ staple: [Int], _ drinks: [Int], _ x: Int) -> Int {
-
     var xArr: [Int] = Array(repeating: 0, count: x)
 
     for s in staple {
@@ -100,8 +95,8 @@ func breakfastNumber1(_ staple: [Int], _ drinks: [Int], _ x: Int) -> Int {
         }
     }
 
-    for  i in 1..<x {
-        xArr[i] += xArr[i-1]
+    for i in 1 ..< x {
+        xArr[i] += xArr[i - 1]
     }
 
     var ans = 0
@@ -112,5 +107,5 @@ func breakfastNumber1(_ staple: [Int], _ drinks: [Int], _ x: Int) -> Int {
         }
     }
 
-    return ans % 1000000007
+    return ans % 1_000_000_007
 }
