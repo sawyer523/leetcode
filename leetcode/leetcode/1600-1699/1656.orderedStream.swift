@@ -63,7 +63,7 @@ class OrderedStream {
     func insert(_ idKey: Int, _ value: String) -> [String] {
         arr[idKey] = value
         let start = ptr
-        while ptr < arr.count && arr[ptr] != "" {
+        while ptr < arr.count, arr[ptr] != "" {
             ptr += 1
         }
         return Array(arr[start ..< ptr])

@@ -15,8 +15,6 @@ import Foundation
 
  子数组 是一个数组中一段连续非空的元素组成的序列。
 
-  
-
  示例 1：
 
  输入：nums = [4,2,4]
@@ -33,7 +31,6 @@ import Foundation
  输出：true
  解释：子数组 [nums[0],nums[1]] 和 [nums[1],nums[2]] 的和相等，都为 0 。
  注意即使子数组的元素相同，这两个子数组也视为不相同的子数组，因为它们在原数组中的起始位置不同。
-  
 
  提示：
 
@@ -43,13 +40,13 @@ import Foundation
 
 func findSubarrays(_ nums: [Int]) -> Bool {
     var counts: [Int: Int] = [:]
-    for i in 1..<nums.count {
-        let sum = nums[i] + nums[i-1]
+    for i in 1 ..< nums.count {
+        let sum = nums[i] + nums[i - 1]
         if counts[sum] != nil {
             return true
         }
         counts[sum] = 1
     }
-    
+
     return false
 }

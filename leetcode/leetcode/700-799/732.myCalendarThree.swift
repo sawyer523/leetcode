@@ -58,8 +58,8 @@ class MyCalendarThree {
             return
         }
 
-        if start <= l &&
-            r <= end {
+        if start <= l,
+           r <= end {
             var p = myCaledar[idx, default: (0, 0)]
             p.0 += 1
             p.1 += 1

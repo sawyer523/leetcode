@@ -21,8 +21,6 @@ import Foundation
 
  返回击败全部 n 个对手需要训练的 最少 小时数目。
 
-  
-
  示例 1：
 
  输入：initialEnergy = 5, initialExperience = 3, energy = [1,4,3,2], experience = [2,6,3,1]
@@ -44,7 +42,6 @@ import Foundation
  输入：initialEnergy = 2, initialExperience = 4, energy = [1], experience = [3]
  输出：0
  解释：你不需要额外的精力和经验就可以赢得比赛，所以返回 0 。
-  
 
  提示：
 
@@ -59,7 +56,7 @@ func minNumberOfHours(_ initialEnergy: Int, _ initialExperience: Int, _ energy: 
     if initialEnergy <= sum {
         trainingHours = sum + 1 - initialEnergy
     }
-    
+
     var initialExperience = initialExperience
     for e in experience {
         if initialExperience <= e {
@@ -69,6 +66,6 @@ func minNumberOfHours(_ initialEnergy: Int, _ initialExperience: Int, _ energy: 
             initialExperience += e
         }
     }
-    
+
     return trainingHours
 }

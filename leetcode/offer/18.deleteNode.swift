@@ -25,7 +25,6 @@ import Foundation
  输入: head = [4,5,1,9], val = 1
  输出: [4,5,9]
  解释: 给定你链表中值为 1 的第三个节点，那么在调用了你的函数之后，该链表应变为 4 -> 5 -> 9.
-  
 
  说明：
 
@@ -34,8 +33,10 @@ import Foundation
  */
 
 func deleteNode(_ head: ListNode?, _ val: Int) -> ListNode? {
-    guard let head = head else { return nil }
-    
+    guard let head = head else {
+        return nil
+    }
+
     let node = ListNode(-1, head)
     var tmp: ListNode? = node
     while tmp?.next != nil {

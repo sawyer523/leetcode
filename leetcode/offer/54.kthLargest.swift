@@ -11,8 +11,6 @@ import Foundation
  剑指 Offer 54. 二叉搜索树的第k大节点
  给定一棵二叉搜索树，请找出其中第 k 大的节点的值。
 
-  
-
  示例 1:
 
  输入: root = [3,1,4,null,2], k = 1
@@ -33,7 +31,6 @@ import Foundation
    /
   1
  输出: 4
-  
 
  限制：
 
@@ -47,16 +44,16 @@ func kthLargest(_ root: TreeNode?, _ k: Int) -> Int {
         guard let node = node else {
             return
         }
-        
+
         dfs(node.right)
         i += 1
         if i == k {
             res = node.val
         }
-        
+
         dfs(node.left)
     }
-    
+
     dfs(root)
     return res
 }

@@ -60,7 +60,7 @@ class SummaryRanges {
         var copy = [[Int]]()
         for i in martrix.indices {
             let curL = martrix[i][0], curU = martrix[i][1]
-            if curL <= val && val <= curU {
+            if curL <= val, val <= curU {
                 return
             }
             if curU < val {
@@ -68,7 +68,7 @@ class SummaryRanges {
                 preIDx = i
                 copy.append(martrix[i])
             } else {
-                if val + 1 == curL && val - 1 == pre {
+                if val + 1 == curL, val - 1 == pre {
                     copy.removeLast()
                     copy.append([martrix[preIDx][0], curU])
                     copy.append(contentsOf: martrix[i + 1 ..< martrix.count])

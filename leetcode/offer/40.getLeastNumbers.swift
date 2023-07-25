@@ -27,5 +27,5 @@ import Foundation
  */
 
 func getLeastNumbers(_ arr: [Int], _ k: Int) -> [Int] {
-    return Array(arr.sorted()[0..<k])
+    return Array(arr.sorted()[0 ..< k])
 }

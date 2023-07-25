@@ -57,7 +57,7 @@ class MyCalendarTwo {
             return
         }
 
-        if start <= l && r <= end {
+        if start <= l, r <= end {
             var p = tree[idx, default: (0, 0)]
             p.0 += val
             p.1 += val

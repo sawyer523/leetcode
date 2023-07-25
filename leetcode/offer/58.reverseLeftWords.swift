@@ -27,5 +27,5 @@ import Foundation
 
 func reverseLeftWords(_ s: String, _ n: Int) -> String {
     let idx = s.index(s.startIndex, offsetBy: n)
-    return String(s[idx...] + s[s.startIndex..<idx])
+    return String(s[idx...] + s[s.startIndex ..< idx])
 }

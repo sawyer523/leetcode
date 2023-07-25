@@ -25,7 +25,6 @@ import Foundation
   1  3  -1 [-3  5  3] 6  7       5
   1  3  -1  -3 [5  3  6] 7       6
   1  3  -1  -3  5 [3  6  7]      7
-  
 
  提示：
 
@@ -33,22 +32,22 @@ import Foundation
  */
 
 func maxSlidingWindow2(_ nums: [Int], _ k: Int) -> [Int] {
-        var left = Array(repeating: 0, count: nums.count)
-        var right = Array(repeating: 0, count: nums.count)
+    var left = Array(repeating: 0, count: nums.count)
+    var right = Array(repeating: 0, count: nums.count)
 
-        left[0] = nums[0]
-        right[nums.count - 1] = nums[nums.count - 1]
+    left[0] = nums[0]
+    right[nums.count - 1] = nums[nums.count - 1]
 
-        for i in 1 ..< nums.count {
-            left[i] = (i % k == 0 ? nums[i] : max(left[i - 1], nums[i]))
-            let j = nums.count - i - 1
-            right[j] = (j + 1) % k == 0 ? nums[j] : max(right[j + 1], nums[j])
-        }
-
-        var res = [Int]()
-        for i in 0 ..< (nums.count - k + 1) {
-            let j = i + k - 1
-            res.append(max(right[i], left[j]))
-        }
-        return res
+    for i in 1 ..< nums.count {
+        left[i] = (i % k == 0 ? nums[i] : max(left[i - 1], nums[i]))
+        let j = nums.count - i - 1
+        right[j] = (j + 1) % k == 0 ? nums[j] : max(right[j + 1], nums[j])
     }
+
+    var res = [Int]()
+    for i in 0 ..< (nums.count - k + 1) {
+        let j = i + k - 1
+        res.append(max(right[i], left[j]))
+    }
+    return res
+}

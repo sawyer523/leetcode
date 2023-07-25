@@ -70,7 +70,7 @@ func findMaximizedCapital(_ k: Int, _ w: Int, _ profits: [Int], _ capital: [Int]
     }
 
     arr.sort {
-        return $0.1 > $1.1 || ($0.1 == $1.1 && $0.0 < $1.0)
+        $0.1 > $1.1 || ($0.1 == $1.1 && $0.0 < $1.0)
     }
 
     var ans = w

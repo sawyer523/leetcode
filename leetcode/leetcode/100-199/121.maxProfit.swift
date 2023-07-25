@@ -15,8 +15,6 @@ import Foundation
 
  返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。
 
-  
-
  示例 1：
 
  输入：[7,1,5,3,6,4]
@@ -28,7 +26,6 @@ import Foundation
  输入：prices = [7,6,4,3,1]
  输出：0
  解释：在这种情况下, 没有交易完成, 所以最大利润为 0。
-  
 
  提示：
 
@@ -47,6 +44,6 @@ func maxProfit3(_ prices: [Int]) -> Int {
             maxProfit = price - minPrice
         }
     }
-    
+
     return maxProfit
 }

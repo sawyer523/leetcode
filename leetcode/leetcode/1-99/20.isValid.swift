@@ -39,7 +39,7 @@ import Foundation
 func isValid2(_ s: String) -> Bool {
     let m: [Character: Character] = ["}": "{", ")": "(", "]": "["]
     var stack: [Character] = []
-    
+
     for ch in s {
         if let p = m[ch] {
             if stack.isEmpty || stack.last! != p {
@@ -50,6 +50,6 @@ func isValid2(_ s: String) -> Bool {
             stack.append(ch)
         }
     }
-    
+
     return stack.isEmpty
 }

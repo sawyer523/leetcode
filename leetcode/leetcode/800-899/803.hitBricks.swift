@@ -116,7 +116,7 @@ class Solution803 {
                         unionFind.union(x: getIndex(x: i - 1, y: j), y: getIndex(x: i, y: j))
                     }
 
-                    if j > 0 && copy[i][j - 1] == 1 {
+                    if j > 0, copy[i][j - 1] == 1 {
                         unionFind.union(x: getIndex(x: i, y: j - 1), y: getIndex(x: i, y: j))
                     }
                 }
@@ -149,7 +149,7 @@ class Solution803 {
                 let newX = x + item[0]
                 let newY = y + item[1]
 
-                if inArea(x: newX, y: newY) && copy[newX][newY] == 1 {
+                if inArea(x: newX, y: newY), copy[newX][newY] == 1 {
                     unionFind.union(x: getIndex(x: newX, y: newY), y: getIndex(x: x, y: y))
                 }
             }

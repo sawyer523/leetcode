@@ -51,7 +51,7 @@ func alienOrder(_ words: [String]) -> String {
     for c in words[0] {
         g[c] = []
     }
-next:
+    next:
         for i in 1 ..< words.count {
         let s = words[i - 1]
         let t = words[i]

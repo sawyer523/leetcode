@@ -121,11 +121,11 @@ class Solution558 {
         let o2 = intersect(quadTree1?.topRight, quadTree2?.topRight)
         let o3 = intersect(quadTree1?.bottomLeft, quadTree2?.bottomLeft)
         let o4 = intersect(quadTree1?.bottomRight, quadTree2?.bottomRight)
-        if o1?.isLeaf ?? false &&
-            o2?.isLeaf ?? false &&
-            o3?.isLeaf ?? false &&
-            o4?.isLeaf ?? false &&
-            o1?.val == o2?.val && o1?.val == o3?.val && o1?.val == o4?.val {
+        if o1?.isLeaf ?? false,
+           o2?.isLeaf ?? false,
+           o3?.isLeaf ?? false,
+           o4?.isLeaf ?? false,
+           o1?.val == o2?.val, o1?.val == o3?.val, o1?.val == o4?.val {
             return Node(o1?.val ?? false, true)
         }
         let n = Node(false, false)

@@ -18,7 +18,6 @@ import Foundation
  数组的中位数是按 递增 顺序排列后位于 中间 的那个元素，如果数组长度为偶数，则中位数是位于中间靠 左 的那个元素。
  例如，[2,3,1,4] 的中位数是 2 ，[8,4,3,5,1] 的中位数是 4 。
  子数组是数组中的一个连续部分。
-  
 
  示例 1：
 
@@ -30,7 +29,6 @@ import Foundation
  输入：nums = [2,3,1], k = 3
  输出：1
  解释：[3] 是唯一一个中位数等于 3 的子数组。
-  
 
  提示：
 
@@ -41,35 +39,35 @@ import Foundation
  */
 
 func countSubarrays(_ nums: [Int], _ k: Int) -> Int {
-    var kIdx = -1
+    var kIDx = -1
     for (i, v) in nums.enumerated() {
         if v == k {
-            kIdx = i
+            kIDx = i
             break
         }
     }
-    
+
     func sign(_ num: Int) -> Int {
         if num == 0 {
             return 0
         }
-        
+
         return 0 < num ? 1 : -1
     }
-    
+
     var ans = 0
     var counts = [0: 1]
     var sum = 0
     for (i, num) in nums.enumerated() {
         sum += sign(num - k)
-        if i < kIdx {
+        if i < kIDx {
             counts[sum, default: 0] += 1
         } else {
             let prev0 = counts[sum, default: 0]
             let prev1 = counts[sum - 1, default: 0]
-            ans += prev0  + prev1
+            ans += prev0 + prev1
         }
     }
-    
+
     return ans
 }

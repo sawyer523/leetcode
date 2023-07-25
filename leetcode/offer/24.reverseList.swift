@@ -22,15 +22,15 @@ import Foundation
  */
 
 func reverseList(_ head: ListNode?) -> ListNode? {
-    var prev: ListNode? = nil
+    var prev: ListNode?
     var cur = head
-    
+
     while cur != nil {
         let next = cur?.next
         cur?.next = prev
         prev = cur
         cur = next
     }
-    
+
     return prev
 }

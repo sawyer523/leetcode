@@ -43,24 +43,28 @@ import Foundation
 
 func isSubStructure(_ A: TreeNode?, _ B: TreeNode?) -> Bool {
     func helper(_ a: TreeNode?, _ b: TreeNode?) -> Bool {
-        guard let nodeB = b else { return true }
-        guard let nodeA = a else { return false }
+        guard let nodeB = b else {
+            return true
+        }
+        guard let nodeA = a else {
+            return false
+        }
         if nodeA.val != nodeB.val {
             return false
         }
-        
+
         return helper(nodeA.left, nodeB.left) &&
-        helper(nodeA.right, nodeB.right)
+            helper(nodeA.right, nodeB.right)
     }
-    
+
     if A == nil, B == nil {
         return true
     }
-    
+
     if A == nil || B == nil {
         return false
     }
-    
+
     var res = false
     if A?.val == B?.val {
         res = helper(A, B)
@@ -68,10 +72,10 @@ func isSubStructure(_ A: TreeNode?, _ B: TreeNode?) -> Bool {
     if !res {
         res = isSubStructure(A?.left, B)
     }
-    
+
     if !res {
         res = isSubStructure(A?.right, B)
     }
-    
+
     return res
 }

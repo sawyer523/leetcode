@@ -46,7 +46,7 @@ func mincostToHireWorkers(_ quality: [Int], _ wage: [Int], _ k: Int) -> Double {
         workers.append((quality[i], wage[i]))
     }
     workers.sort {
-        return Double($0.1) / Double($0.0) <= Double($1.1) / Double($1.0)
+        Double($0.1) / Double($0.0) <= Double($1.1) / Double($1.0)
     }
 
     var heap = [0]

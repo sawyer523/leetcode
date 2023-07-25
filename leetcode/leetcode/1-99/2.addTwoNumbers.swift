@@ -15,10 +15,7 @@ import Foundation
 
  你可以假设除了数字 0 之外，这两个数都不会以 0 开头。
 
-  
-
  示例 1：
-
 
  输入：l1 = [2,4,3], l2 = [5,6,4]
  输出：[7,0,8]
@@ -31,7 +28,6 @@ import Foundation
 
  输入：l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
  输出：[8,9,9,9,0,0,0,1]
-  
 
  提示：
 
@@ -47,22 +43,22 @@ func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
     var l1 = l1
     var l2 = l2
     while l1 != nil ||
-            l2 != nil {
+        l2 != nil {
         var n1 = 0
         var n2 = 0
         if l1 != nil {
             n1 = l1!.val
             l1 = l1?.next
         }
-        
+
         if l2 != nil {
             n2 = l2!.val
             l2 = l2?.next
         }
-        
+
         var sum = n1 + n2 + carry
         (sum, carry) = (sum % 10, sum / 10)
-        
+
         if head == nil {
             head = ListNode(sum)
             tail = head
@@ -71,10 +67,10 @@ func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
             tail = tail?.next
         }
     }
-    
+
     if 0 < carry {
         tail?.next = ListNode(carry)
     }
-    
+
     return head
 }

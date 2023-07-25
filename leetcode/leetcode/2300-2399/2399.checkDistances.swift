@@ -17,8 +17,6 @@ import Foundation
 
  如果 s 是一个 匀整 字符串，返回 true ；否则，返回 false 。
 
-  
-
  示例 1：
 
  输入：s = "abaccb", distance = [1,3,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -36,7 +34,6 @@ import Foundation
  解释：
  - 'a' 在下标 0 和 1 处出现，所以两次出现之间的字母数量为 0 。
  但是 distance[0] = 1 ，s 不是一个匀整字符串。
-  
 
  提示：
 
@@ -60,6 +57,6 @@ func checkDistances(_ s: String, _ distance: [Int]) -> Bool {
             dist[idx] = i
         }
     }
-    
+
     return true
 }

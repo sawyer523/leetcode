@@ -63,7 +63,7 @@ func restoreMatrix(_ rowSum: [Int], _ colSum: [Int]) -> [[Int]] {
     var i = 0
     var j = 0
     var rowSum = rowSum
-    var  colSum = colSum
+    var colSum = colSum
     while i < m, j < n {
         let rs = rowSum[i]
         let cs = colSum[j]
@@ -77,6 +77,6 @@ func restoreMatrix(_ rowSum: [Int], _ colSum: [Int]) -> [[Int]] {
             j += 1
         }
     }
-    
+
     return ans
 }

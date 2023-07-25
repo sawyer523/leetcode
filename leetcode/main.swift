@@ -7,4 +7,4 @@
 
 import Foundation
 
-print(isValid3("aabcbc"))
+print(halveArray([5,19,8,1]))

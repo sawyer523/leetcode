@@ -128,7 +128,7 @@ class AllOne {
     }
 
     fileprivate func trimZeroes() {
-        while tail.prev !== head && tail.prev!.val! == 0 {
+        while tail.prev !== head, tail.prev!.val! == 0 {
             let tailPrev = tail.prev
             tailPrev?.prev?.next = tail
             tail.prev = tailPrev?.prev

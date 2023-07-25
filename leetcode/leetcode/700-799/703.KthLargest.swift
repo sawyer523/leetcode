@@ -15,7 +15,6 @@ import Foundation
 
  KthLargest(int k, int[] nums) 使用整数 k 和整数流 nums 初始化对象。
  int add(int val) 将 val 插入数据流 nums 后，返回当前数据流中第 k 大的元素。
-  
 
  示例：
 
@@ -32,7 +31,6 @@ import Foundation
  kthLargest.add(10);  // return 5
  kthLargest.add(9);   // return 8
  kthLargest.add(4);   // return 8
-  
 
  提示：
  1 <= k <= 10^4
@@ -49,19 +47,19 @@ class KthLargest {
     init(_ k: Int, _ nums: [Int]) {
         self.k = k
         stack = nums
-        if !stack.isEmpty, 0 < stack.count - k{
+        if !stack.isEmpty, 0 < stack.count - k {
             stack.sort(by: >)
             stack.removeLast(stack.count - k)
         }
     }
-    
+
     func add(_ val: Int) -> Int {
         if stack.count < k {
             stack.append(val)
-        } else if stack.last! < val{
-            stack[k-1] = val
+        } else if stack.last! < val {
+            stack[k - 1] = val
         }
-        
+
         stack.sort(by: >)
         return stack.last!
     }

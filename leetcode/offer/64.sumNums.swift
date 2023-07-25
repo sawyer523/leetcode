@@ -27,7 +27,7 @@ import Foundation
 
 func sumNums(_ n: Int) -> Int {
     var ans = 0
-    
+
     @discardableResult
     func sum(_ n: Int) -> Bool {
         ans += n

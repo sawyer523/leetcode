@@ -112,6 +112,117 @@
             endingLineNumber = "44"
             landmarkName = "dfs(_:_:)"
             landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "C66D7BB7-D85E-45AF-8975-8A5109186BB1 - e233986995bea35a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dfs(Swift.Optional&lt;leetcode.TreeNode&gt;, Swift.Int) -&gt; ()"
+                  moduleName = "leetcode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cxn/Library/Mobile%20Documents/com~apple~CloudDocs/learn/leetcode/leetcode/offer/34.pathSum.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "C66D7BB7-D85E-45AF-8975-8A5109186BB1 - e233986995bea35a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dfs(Swift.Optional&lt;leetcode.TreeNode&gt;, Swift.Int) -&gt; ()"
+                  moduleName = "leetcode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cxn/Library/Mobile%20Documents/com~apple~CloudDocs/learn/leetcode/leetcode/offer/34.pathSum.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "96">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "99268413-95A7-4E82-A95F-ECC0827A9C88"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "leetcode/leetcode/1000-1099/1072.maxEqualRowsAfterFlips.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "maxEqualRowsAfterFlips(_:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A20B3E70-706B-4CD8-819B-742721ACBDA9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "leetcode/leetcode/1600-1699/1681.minimumIncompatibility.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "minimumIncompatibility(_:_:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "A20B3E70-706B-4CD8-819B-742721ACBDA9 - 7a1c63fbe3e336"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "leetcode.minimumIncompatibility(Swift.Array&lt;Swift.Int&gt;, Swift.Int) -&gt; Swift.Int"
+                  moduleName = "leetcode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cxn/Library/Mobile%20Documents/com~apple~CloudDocs/learn/leetcode/leetcode/leetcode/1600-1699/1681.minimumIncompatibility.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "10200">
+               </Location>
+               <Location
+                  uuid = "A20B3E70-706B-4CD8-819B-742721ACBDA9 - 7a1c63fbe3e336"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "leetcode.minimumIncompatibility(Swift.Array&lt;Swift.Int&gt;, Swift.Int) -&gt; Swift.Int"
+                  moduleName = "leetcode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cxn/Library/Mobile%20Documents/com~apple~CloudDocs/learn/leetcode/leetcode/leetcode/1600-1699/1681.minimumIncompatibility.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "10180">
+               </Location>
+               <Location
+                  uuid = "A20B3E70-706B-4CD8-819B-742721ACBDA9 - 7a1c63fbe3e315"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "leetcode.minimumIncompatibility(Swift.Array&lt;Swift.Int&gt;, Swift.Int) -&gt; Swift.Int"
+                  moduleName = "leetcode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cxn/Library/Mobile%20Documents/com~apple~CloudDocs/learn/leetcode/leetcode/leetcode/1600-1699/1681.minimumIncompatibility.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "14372">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

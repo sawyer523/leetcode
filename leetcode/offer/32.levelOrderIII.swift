@@ -62,6 +62,6 @@ func levelOrder3(_ root: TreeNode?) -> [[Int]] {
         order.toggle()
         q = p
     }
-    
+
     return res
 }

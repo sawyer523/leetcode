@@ -54,7 +54,7 @@ func minSubarray(_ nums: [Int], _ p: Int) -> Int {
     if rem == 0 {
         return 0
     }
-    
+
     var minCount = nums.count
     sum = 0
     for (i, v) in nums.enumerated() {
@@ -66,6 +66,6 @@ func minSubarray(_ nums: [Int], _ p: Int) -> Int {
         }
         mp[tempRem] = i
     }
-    
+
     return nums.count <= minCount ? -1 : minCount
 }
