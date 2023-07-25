@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swiftformat",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nicklockwood/SwiftFormat",
+      "state" : {
+        "branch" : "master",
+        "revision" : "308475681796004a28b084ab9b5da61e110dccef"
+      }
+    }
+  ],
+  "version" : 2
+}
